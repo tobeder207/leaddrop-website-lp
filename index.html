@@ -50,7 +50,7 @@
   text-rendering:optimizeLegibility;
 }
 #ld-page *,#ld-page *::before,#ld-page *::after{box-sizing:border-box;margin:0;padding:0;}
-#ld-page .ld-wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+#ld-page .ld-wrap{max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,48px);}
 #ld-page section{padding:96px 0;border-top:1px solid var(--ld-line);}
 
 #ld-page h1,#ld-page h2,#ld-page h3{color:var(--ld-text);font-weight:700;text-wrap:balance;}
@@ -299,12 +299,16 @@
   background:var(--ld-surface-2);overflow:hidden;
 }
 #ld-page .ld-video-poster{
-  aspect-ratio:16/9;width:100%;border:0;background:var(--ld-surface-2);cursor:pointer;
+  aspect-ratio:16/9;width:100%;border:0;cursor:pointer;
+  background:linear-gradient(180deg,rgba(10,11,13,.25),rgba(10,11,13,.6)),url("https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@main/leaddrop-video-preview.jpg") center/cover no-repeat,var(--ld-surface-2);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
   color:var(--ld-text);font-family:var(--ld-font);padding:24px;
   transition:background .15s ease;
 }
-#ld-page .ld-video-poster:hover{background:#20242c;}
+#ld-page .ld-video-poster:hover .ld-video-play{transform:scale(1.06);}
+#ld-page .ld-video-play{transition:transform .2s ease;box-shadow:0 10px 40px rgba(0,0,0,.45);}
+#ld-page .ld-video-label,#ld-page .ld-video-sub{text-shadow:0 1px 12px rgba(0,0,0,.7);}
+#ld-page .ld-video-sub{color:var(--ld-text);opacity:.8;}
 #ld-page .ld-video-play{
   width:66px;height:66px;border-radius:100px;background:var(--ld-accent);
   display:flex;align-items:center;justify-content:center;
@@ -391,7 +395,7 @@
   align-self:center;transition:color .15s ease;
 }
 #ld-page .ld-flow-link:hover{color:var(--ld-muted);}
-#ld-page .ld-plans.is-two{grid-template-columns:repeat(2,1fr);max-width:860px;margin-left:auto;margin-right:auto;}
+#ld-page .ld-plans.is-two{grid-template-columns:repeat(2,1fr);max-width:1040px;margin-left:auto;margin-right:auto;}
 #ld-page .ld-plan-care{font-size:.86rem;line-height:1.5;color:var(--ld-text);max-width:none;padding:10px 12px;border:1px solid var(--ld-line);border-radius:10px;}
 #ld-page .ld-plans-note{text-align:center;margin:22px auto 0;font-size:.9rem;color:var(--ld-dim);}
 @media (max-width:900px){#ld-page .ld-plans,#ld-page .ld-plans.is-two{grid-template-columns:1fr;}}
