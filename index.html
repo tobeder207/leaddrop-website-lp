@@ -107,7 +107,8 @@ if(window.ldConsent === 'all') window.ldLoadPixel();
   background:radial-gradient(circle,#fff 10%,transparent 70%);
   transform:translate(-50%,-50%) scale(0);transition:transform .4s ease-out;
 }
-#ld-page .ld-btn:hover::before,#ld-page .ld-nav-cta:hover::before{transform:translate(-50%,-50%) scale(1.2);}
+@media (hover:hover){#ld-page .ld-btn:hover::before,#ld-page .ld-nav-cta:hover::before{transform:translate(-50%,-50%) scale(1.2);}}
+@media (hover:none){#ld-page .ld-hover-only{display:none;}#ld-page .ld-btn:hover{transform:none;}}
 #ld-page .ld-btn:active{transform:translateY(0);}
 #ld-page .ld-btn svg{width:16px;height:16px;}
 #ld-page .ld-btn-sm{padding:13px 22px;font-size:.94rem;width:100%;}
@@ -252,6 +253,7 @@ if(window.ldConsent === 'all') window.ldLoadPixel();
   #ld-page .ld-enemy{padding-left:30px;}
   #ld-page .ld-enemy-item::before{left:-30px;}
   #ld-page .ld-enemy-item{padding:26px 0;}
+  #ld-page .ld-enemy.is-js .ld-enemy-item.is-seen{opacity:.6;}
 }
 
 #ld-page #team h2{max-width:22ch;}
@@ -475,7 +477,7 @@ if(window.ldConsent === 'all') window.ldLoadPixel();
 #ld-page .ld-testis + .ld-cases{margin-top:28px;}
 @media (max-width:820px){
   #ld-page .ld-testis{grid-template-columns:1fr;}
-  #ld-page .ld-testi.is-tall{max-width:340px;}
+  #ld-page .ld-testi.is-tall{width:100%;max-width:280px;margin:0 auto;}
 }
 
 /* --- Flächen-Rhythmus --- */
@@ -850,7 +852,7 @@ if(window.ldConsent === 'all') window.ldLoadPixel();
   <div class="ld-wrap">
     <span class="ld-kicker">Aktuelle Projekte</span>
     <h2>14 Projekte, die live sind. Schau sie dir an.</h2>
-    <p style="margin-top:18px">Echte Seiten, keine Mockups. Fahr mit der Maus über ein Projekt, dann scrollt die Seite durch. Ein Klick öffnet sie im neuen Tab.</p>
+    <p style="margin-top:18px">Echte Seiten, keine Mockups. <span class="ld-hover-only">Fahr mit der Maus über ein Projekt, dann scrollt die Seite durch. </span>Ein Klick öffnet sie im neuen Tab.</p>
     <div class="ld-projects is-feature">
       <a class="ld-project" href="https://mega-vape.deals/" target="_blank" rel="noopener">
         <span class="ld-shot"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@9cdc5d1/projekte/wolke7-l-v1.webp" alt="Startseite von Wolke 7 Dampfshop" loading="lazy" width="1200" height="2250"></span>
