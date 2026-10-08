@@ -6,8 +6,11 @@
 <meta name="robots" content="noindex, follow">
 <title>Leaddrop | Websites, die dir Kunden aus deiner Region bringen.</title>
 <meta name="description" content="Websites für regionale Unternehmen, die Kunden bringen. Fast Track oder Excellence Track, Festpreis nach kostenloser Beratung. 14 Projekte live. Seit 2020 aus Passau.">
-<!-- Meta Pixel -->
+<!-- Meta Pixel: lädt erst nach Einwilligung (Cookie-Banner unten) -->
 <script>
+window.ldConsent = (function(){ try { return localStorage.getItem('ld-consent'); } catch(e) { return null; } })();
+window.ldLoadPixel = function(){
+if(window.fbq) return;
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
@@ -15,10 +18,11 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','271945335700058');
 fbq('track','PageView');
+};
+if(window.ldConsent === 'all') window.ldLoadPixel();
 </script>
 </head>
 <body>
-<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=271945335700058&ev=PageView&noscript=1"></noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
@@ -94,7 +98,16 @@ fbq('track','PageView');
   text-decoration:none;padding:17px 30px;border-radius:100px;cursor:pointer;
   transition:transform .15s cubic-bezier(.2,0,0,1),filter .15s cubic-bezier(.2,0,0,1);
 }
-#ld-page .ld-btn:hover{transform:translateY(-2px);filter:brightness(1.06);}
+#ld-page .ld-btn:hover{transform:translateY(-2px);}
+/* Glow folgt dem Mauszeiger (--gx/--gy per JS), Glühfarbe weiß */
+#ld-page .ld-btn,#ld-page .ld-nav-cta{position:relative;overflow:hidden;isolation:isolate;}
+#ld-page .ld-btn::before,#ld-page .ld-nav-cta::before{
+  content:"";position:absolute;z-index:-1;left:var(--gx,50%);top:var(--gy,50%);
+  width:200px;height:200px;border-radius:50%;pointer-events:none;opacity:.55;
+  background:radial-gradient(circle,#fff 10%,transparent 70%);
+  transform:translate(-50%,-50%) scale(0);transition:transform .4s ease-out;
+}
+#ld-page .ld-btn:hover::before,#ld-page .ld-nav-cta:hover::before{transform:translate(-50%,-50%) scale(1.2);}
 #ld-page .ld-btn:active{transform:translateY(0);}
 #ld-page .ld-btn svg{width:16px;height:16px;}
 #ld-page .ld-btn-sm{padding:13px 22px;font-size:.94rem;width:100%;}
@@ -369,6 +382,28 @@ fbq('track','PageView');
 #ld-page .ld-plan-care{font-size:.86rem;line-height:1.5;color:var(--ld-text);max-width:none;padding:10px 12px;border:1px solid var(--ld-line);border-radius:10px;}
 #ld-page .ld-plans-note{text-align:center;margin:22px auto 0;font-size:.9rem;color:var(--ld-dim);}
 @media (max-width:900px){#ld-page .ld-plans,#ld-page .ld-plans.is-two{grid-template-columns:1fr;}}
+
+/* --- Cookie-Banner --- */
+#ld-page .ld-consent{
+  position:fixed;left:16px;bottom:16px;z-index:200;width:min(420px,calc(100vw - 32px));
+  background:var(--ld-surface-2);border:1px solid var(--ld-line);border-radius:var(--ld-radius);
+  padding:20px 20px 18px;box-shadow:0 24px 60px -20px rgba(0,0,0,.8);
+  opacity:0;transform:translateY(16px);transition:opacity .3s ease,transform .3s cubic-bezier(.2,.7,.2,1);
+}
+#ld-page .ld-consent[hidden]{display:none;}
+#ld-page .ld-consent.is-in{opacity:1;transform:none;}
+#ld-page .ld-consent strong{display:block;font-size:.98rem;margin-bottom:6px;}
+#ld-page .ld-consent p{font-size:.86rem;line-height:1.5;color:var(--ld-muted);max-width:none;}
+#ld-page .ld-consent p a{color:var(--ld-text);}
+#ld-page .ld-consent-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px;}
+#ld-page .ld-consent-btn{
+  font:600 .88rem var(--ld-font);padding:11px 12px;border-radius:100px;cursor:pointer;
+  background:transparent;color:var(--ld-text);border:1px solid var(--ld-dim);transition:border-color .15s ease,background .15s ease;
+}
+#ld-page .ld-consent-btn:hover{border-color:var(--ld-muted);}
+#ld-page .ld-consent-btn.is-primary{background:var(--ld-accent);color:var(--ld-accent-ink);border-color:var(--ld-accent);}
+#ld-page .ld-consent-btn.is-primary:hover{filter:brightness(1.06);}
+#ld-page .ld-consent-open{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
 
 /* --- Dialog (Ablauf je Produkt) --- */
 #ld-page dialog.ld-modal{
@@ -703,10 +738,6 @@ fbq('track','PageView');
       </button>
       <p class="ld-video-fallback">Video lädt nicht? <a href="https://drive.google.com/file/d/1RCi6Yx0uWpMt-lw9HJUgmlh8RZl7qp4p/view" target="_blank" rel="noopener">Direkt öffnen</a></p>
     </div>
-    <div class="ld-cta-row">
-      <a class="ld-btn" href="https://calendly.com/leaddrop/erstgespraech">Kostenlose Beratung buchen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <span>Danach weißt du, ob Fast Track oder Excellence Track passt.</span>
-    </div>
   </div>
 </section>
 
@@ -842,10 +873,6 @@ fbq('track','PageView');
         <span class="ld-project-meta">Website · prime-session.de</span>
       </a>
     </div>
-    <div class="ld-cta-row">
-      <a class="ld-btn" href="https://calendly.com/leaddrop/erstgespraech">Kostenlose Beratung buchen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <span>Deine Website könnte hier die nächste sein.</span>
-    </div>
     <div class="ld-projects">
       <a class="ld-project" href="https://achtsam-wohnen.com/" target="_blank" rel="noopener">
         <span class="ld-shot"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@9cdc5d1/projekte/achtsam-s-v1.webp" alt="Startseite von Achtsam Wohnen" loading="lazy" width="640" height="1200"></span>
@@ -975,11 +1002,21 @@ fbq('track','PageView');
       <span>Leaddrop · seit 2020</span>
       <a href="https://leaddrop.de/impressum" target="_blank" rel="noopener">Impressum</a>
       <a href="https://leaddrop.de/datenschutz" target="_blank" rel="noopener">Datenschutz</a>
+      <button type="button" class="ld-consent-open">Cookie-Einstellungen</button>
     </div>
   </div>
 </section>
 
 <!-- ================= ABLAUF-DIALOGE ================= -->
+<div class="ld-consent" id="ld-consent" role="dialog" aria-labelledby="ld-consent-title" aria-describedby="ld-consent-desc" hidden>
+  <strong id="ld-consent-title">Cookies &amp; Tracking</strong>
+  <p id="ld-consent-desc">Wir nutzen das Meta Pixel, um zu messen, ob unsere Anzeigen funktionieren. Das läuft nur, wenn du zustimmst. Details in der <a href="https://leaddrop.de/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a>.</p>
+  <div class="ld-consent-actions">
+    <button type="button" class="ld-consent-btn" data-consent="essential">Nur notwendige</button>
+    <button type="button" class="ld-consent-btn is-primary" data-consent="all">Alle akzeptieren</button>
+  </div>
+</div>
+
 <dialog class="ld-modal" id="flow-fasttrack" aria-labelledby="flow-fasttrack-title">
   <div class="ld-modal-head">
     <div>
@@ -1115,6 +1152,35 @@ fbq('track','PageView');
       es.forEach(function(e){ if(e.isIntersecting){ map.classList.add('is-in'); io.disconnect(); } });
     }, { threshold: 0.35 });
     io.observe(map);
+  })();
+
+  // Glow-Buttons: Lichtpunkt folgt der Maus
+  root.addEventListener('pointermove', function(e){
+    var b = e.target.closest && e.target.closest('.ld-btn, .ld-nav-cta');
+    if(!b) return;
+    var r = b.getBoundingClientRect();
+    b.style.setProperty('--gx', (e.clientX - r.left) + 'px');
+    b.style.setProperty('--gy', (e.clientY - r.top) + 'px');
+  }, { passive: true });
+
+  // Cookie-Banner: Pixel erst nach Zustimmung
+  (function(){
+    var box = root.querySelector('#ld-consent');
+    if(!box) return;
+    function show(){ box.hidden = false; void box.offsetWidth; box.classList.add('is-in'); }
+    function hide(){ box.classList.remove('is-in'); setTimeout(function(){ box.hidden = true; }, 320); }
+    if(!window.ldConsent) show();
+    box.addEventListener('click', function(e){
+      var b = e.target.closest('[data-consent]');
+      if(!b) return;
+      var v = b.getAttribute('data-consent'), was = window.ldConsent;
+      try { localStorage.setItem('ld-consent', v); } catch(err) {}
+      window.ldConsent = v;
+      hide();
+      if(v === 'all') window.ldLoadPixel();
+      else if(was === 'all') window.location.reload();
+    });
+    root.querySelectorAll('.ld-consent-open').forEach(function(b){ b.addEventListener('click', show); });
   })();
 
   // Meta Pixel: Klick auf einen Beratungs-Link = Schedule
