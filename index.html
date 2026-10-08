@@ -132,6 +132,12 @@
   opacity:0;transition:opacity 1.6s ease;filter:brightness(1.21) saturate(.55) contrast(1.05);
 }
 #ld-page .ld-hero-bg video.is-playing{opacity:.3;}
+#ld-page .ld-hero-poster{
+  position:absolute;inset:0;opacity:.3;transition:opacity 1.6s ease;
+  background:url("https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@main/leaddrop-hero-poster.jpg") center/cover no-repeat;
+  filter:brightness(1.21) saturate(.55) contrast(1.05);
+}
+#ld-page .ld-hero-bg.is-video .ld-hero-poster{opacity:0;}
 #ld-page .ld-hero-veil{
   position:absolute;inset:0;
   background:
@@ -552,6 +558,7 @@
 <!-- ================= HERO ================= -->
 <section class="ld-hero">
   <div class="ld-hero-bg" aria-hidden="true">
+    <div class="ld-hero-poster"></div>
     <video id="ld-hero-video" muted playsinline loop preload="none"></video>
     <div class="ld-hero-veil"></div>
   </div>
@@ -975,7 +982,7 @@
 
     // Erst einblenden, wenn wirklich Bilder laufen. Schlaegt Autoplay fehl,
     // bleibt das Video unsichtbar statt als Standbild zu haengen.
-    v.addEventListener('playing', function(){ v.classList.add('is-playing'); });
+    v.addEventListener('playing', function(){ v.classList.add('is-playing'); v.parentNode.classList.add('is-video'); });
 
     function attempt(){
       var p = v.play();
