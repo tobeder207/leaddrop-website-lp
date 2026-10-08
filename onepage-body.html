@@ -1,0 +1,1170 @@
+<div id="ld-page">
+     bis zum schließenden </div> kopieren und in einen Code-Block setzen.
+
+     Ads-Landingpage (GitHub Pages). Keine offenen Platzhalter.
+     ============================================================ -->
+
+<div id="ld-page">
+<style>
+#ld-page{
+  --ld-bg:#0A0B0D;
+  --ld-surface:#141619;
+  --ld-surface-2:#1B1E23;
+  --ld-text:#F4F5F7;
+  --ld-muted:#9BA1AA;
+  --ld-dim:#5A6069;
+  --ld-accent:#DAC46D;
+  --ld-accent-ink:#0A0B0D;
+  --ld-line:#24272C;
+  --ld-line-soft:rgba(255,255,255,.07);
+  --ld-radius:14px;
+  --ld-font:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --ld-mono:var(--ld-font);
+  all:initial;
+  display:block;
+  font-family:var(--ld-font);
+  background:var(--ld-bg);
+  color:var(--ld-text);
+  line-height:1.6;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+#ld-page *,#ld-page *::before,#ld-page *::after{box-sizing:border-box;margin:0;padding:0;}
+#ld-page .ld-wrap{max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,48px);}
+#ld-page section{padding:96px 0;border-top:1px solid var(--ld-line);}
+
+#ld-page h1,#ld-page h2,#ld-page h3{color:var(--ld-text);font-weight:700;text-wrap:balance;}
+#ld-page h1{font-size:clamp(2.35rem,6vw,4.4rem);line-height:1.03;letter-spacing:-0.03em;}
+#ld-page h2{font-size:clamp(1.75rem,3.8vw,2.8rem);line-height:1.1;letter-spacing:-0.022em;}
+#ld-page h3{font-size:1.1rem;line-height:1.35;letter-spacing:-0.01em;font-weight:600;}
+#ld-page p{color:var(--ld-muted);font-size:1.02rem;max-width:64ch;}
+#ld-page strong{color:var(--ld-text);font-weight:600;}
+#ld-page em{font-style:italic;color:var(--ld-text);}
+#ld-page a{color:inherit;}
+#ld-page ul{list-style:none;}
+
+#ld-page .ld-eyebrow{
+  display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ld-accent);
+  border:1px solid var(--ld-accent);border-radius:100px;padding:6px 14px;
+}
+#ld-page .ld-kicker{
+  display:inline-flex;align-items:center;gap:10px;font-family:var(--ld-font);font-size:.74rem;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ld-accent);margin-bottom:18px;
+}
+#ld-page .ld-kicker::before{content:"";width:18px;height:1px;background:currentColor;opacity:.7;}
+#ld-page .ld-lead{font-size:clamp(1.06rem,1.8vw,1.28rem);line-height:1.55;color:var(--ld-muted);max-width:56ch;}
+
+/* --- Buttons --- */
+#ld-page .ld-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--ld-accent);color:var(--ld-accent-ink);border:0;
+  font-family:var(--ld-font);font-weight:700;font-size:1.02rem;letter-spacing:.005em;
+  text-decoration:none;padding:17px 30px;border-radius:100px;cursor:pointer;
+  transition:transform .15s cubic-bezier(.2,0,0,1),filter .15s cubic-bezier(.2,0,0,1);
+}
+#ld-page .ld-btn:hover{transform:translateY(-2px);}
+/* Glow folgt dem Mauszeiger (--gx/--gy per JS), Glühfarbe weiß */
+#ld-page .ld-btn,#ld-page .ld-nav-cta{position:relative;overflow:hidden;isolation:isolate;}
+#ld-page .ld-btn::before,#ld-page .ld-nav-cta::before{
+  content:"";position:absolute;z-index:-1;left:var(--gx,50%);top:var(--gy,50%);
+  width:200px;height:200px;border-radius:50%;pointer-events:none;opacity:.55;
+  background:radial-gradient(circle,#fff 10%,transparent 70%);
+  transform:translate(-50%,-50%) scale(0);transition:transform .4s ease-out;
+}
+@media (hover:hover){#ld-page .ld-btn:hover::before,#ld-page .ld-nav-cta:hover::before{transform:translate(-50%,-50%) scale(1.2);}}
+@media (hover:none){#ld-page .ld-hover-only{display:none;}#ld-page .ld-btn:hover{transform:none;}}
+#ld-page .ld-btn:active{transform:translateY(0);}
+#ld-page .ld-btn svg{width:16px;height:16px;}
+#ld-page .ld-btn-sm{padding:13px 22px;font-size:.94rem;width:100%;}
+#ld-page .ld-btn-outline{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:transparent;color:var(--ld-text);border:1px solid var(--ld-line);
+  font-family:var(--ld-font);font-weight:600;font-size:.94rem;text-decoration:none;
+  padding:13px 22px;border-radius:100px;cursor:pointer;width:100%;
+  transition:border-color .15s ease,background .15s ease;
+}
+#ld-page .ld-btn-outline:hover{border-color:var(--ld-dim);background:var(--ld-surface-2);}
+#ld-page .ld-btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;color:var(--ld-text);text-decoration:none;
+  font-size:.98rem;font-weight:500;padding:17px 4px;border-bottom:1px solid var(--ld-line);
+  background:none;border-top:0;border-left:0;border-right:0;cursor:pointer;font-family:var(--ld-font);
+  transition:border-color .15s ease;
+}
+#ld-page .ld-btn-ghost:hover{border-bottom-color:var(--ld-muted);}
+#ld-page a:focus-visible,#ld-page button:focus-visible,#ld-page summary:focus-visible{
+  outline:2px solid var(--ld-accent);outline-offset:3px;border-radius:4px;
+}
+
+/* --- Nav --- */
+#ld-page .ld-nav{
+  position:sticky;top:0;z-index:50;background:rgba(10,11,13,.86);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--ld-line);
+}
+#ld-page .ld-nav-in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:66px;}
+#ld-page .ld-logo{font-weight:700;font-size:1.12rem;letter-spacing:-.02em;text-decoration:none;}
+#ld-page .ld-nav-links{display:flex;align-items:center;gap:26px;}
+#ld-page .ld-nav-links a{
+  text-decoration:none;color:var(--ld-muted);font-size:.93rem;font-weight:500;letter-spacing:.01em;
+  transition:color .15s ease;
+}
+#ld-page .ld-nav-links a:hover{color:var(--ld-text);}
+#ld-page .ld-nav-cta{
+  text-decoration:none;color:var(--ld-accent-ink);background:var(--ld-accent);
+  font-size:.9rem;font-weight:700;padding:10px 18px;border-radius:100px;white-space:nowrap;
+}
+
+/* --- Hero --- */
+#ld-page .ld-hero{position:relative;padding:clamp(72px,11vw,128px) 0 88px;border-top:0;overflow:hidden;}
+#ld-page .ld-hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+#ld-page .ld-hero-bg video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity 1.6s ease;filter:brightness(1.21) saturate(.55) contrast(1.05);
+}
+#ld-page .ld-hero-bg video.is-playing{opacity:.4;}
+#ld-page .ld-hero-poster{
+  position:absolute;inset:0;opacity:.4;transition:opacity 1.6s ease;
+  background:url("https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@8b71625/webdesign/img-ff13beadf0.jpg") center/cover no-repeat;
+  filter:brightness(1.21) saturate(.55) contrast(1.05);
+}
+#ld-page .ld-hero-bg.is-video .ld-hero-poster{opacity:0;}
+#ld-page .ld-hero-veil{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(10,11,13,.86) 0%,rgba(10,11,13,.68) 46%,rgba(10,11,13,.38) 100%),
+    linear-gradient(180deg,rgba(10,11,13,.6),rgba(10,11,13,.24) 45%,rgba(10,11,13,.88));
+}
+#ld-page .ld-hero > .ld-wrap{position:relative;z-index:1;}
+#ld-page .ld-hero h1{margin:26px 0 0;max-width:15ch;}
+#ld-page .ld-hero .ld-lead{margin-top:26px;}
+#ld-page .ld-hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 26px;margin-top:40px;}
+#ld-page .ld-proof{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 32px;margin-top:56px;padding-top:30px;
+  border-top:1px solid var(--ld-line);
+}
+#ld-page .ld-proof-item{display:flex;flex-direction:column;gap:4px;}
+#ld-page .ld-proof-item b{font-size:clamp(1.5rem,2.6vw,2rem);font-weight:700;letter-spacing:-.03em;line-height:1.1;color:var(--ld-text);}
+#ld-page .ld-proof-item > span:not(.ld-stars){font-size:.88rem;line-height:1.4;color:var(--ld-muted);}
+#ld-page .ld-stars{display:flex;gap:2px;color:var(--ld-accent);margin-bottom:4px;}
+#ld-page .ld-stars svg{width:15px;height:15px;}
+#ld-page .ld-badges{display:flex;flex-wrap:wrap;align-items:center;gap:18px 40px;margin-top:36px;}
+#ld-page .ld-badges img{display:block;width:auto;opacity:.6;transition:opacity .2s ease;}
+#ld-page .ld-badges img:hover{opacity:1;}
+@media (max-width:760px){
+  #ld-page .ld-proof{grid-template-columns:1fr 1fr;}
+  #ld-page .ld-badges{gap:16px 28px;}
+  #ld-page .ld-badges img{transform:scale(.85);transform-origin:left center;}
+}
+#ld-page .ld-todo{
+  display:inline-block;font-family:var(--ld-mono);font-size:.72rem;color:var(--ld-accent);
+  border:1px dashed var(--ld-accent);border-radius:4px;padding:1px 6px;letter-spacing:.02em;
+  text-transform:none;line-height:1.5;
+}
+
+/* --- Problem --- */
+#ld-page .ld-problem-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:1px;background:var(--ld-line);border:1px solid var(--ld-line);border-radius:var(--ld-radius);
+  overflow:hidden;margin-top:44px;
+}
+#ld-page .ld-problem-grid{counter-reset:ldprob;}
+#ld-page .ld-problem-grid div{background:var(--ld-surface);padding:34px 30px 32px;}
+#ld-page .ld-problem-grid div::before{
+  counter-increment:ldprob;content:"0" counter(ldprob);display:block;margin-bottom:22px;
+  font-size:.8rem;font-weight:700;letter-spacing:.08em;color:var(--ld-accent);
+}
+#ld-page .ld-problem-grid h3{font-size:1.24rem;margin-bottom:10px;}
+#ld-page .ld-problem-grid p{font-size:1rem;max-width:none;}
+#ld-page .ld-turn{
+  margin-top:44px;font-size:clamp(1.15rem,2.4vw,1.6rem);line-height:1.35;
+  color:var(--ld-text);font-weight:600;letter-spacing:-.015em;max-width:36ch;
+}
+
+/* --- Feindbild + Wir --- */
+#ld-page .ld-analysis{background:var(--ld-surface);}
+
+/* --- Agentur-Analyse: Scroll-Timeline --- */
+#ld-page .ld-enemy-wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start;}
+#ld-page .ld-enemy-head{position:sticky;top:110px;display:flex;flex-direction:column;align-items:flex-start;}
+#ld-page .ld-enemy-head .ld-btn{margin-top:30px;}
+#ld-page .ld-enemy-count{display:flex;align-items:baseline;gap:8px;margin-top:34px;padding-top:22px;border-top:1px solid var(--ld-line);width:100%;}
+#ld-page .ld-enemy-count b{font-size:2.6rem;font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--ld-accent);font-variant-numeric:tabular-nums;}
+#ld-page .ld-enemy-count span{font-size:1rem;font-weight:600;color:var(--ld-dim);}
+#ld-page .ld-enemy-count em{font-style:normal;font-size:.86rem;color:var(--ld-muted);margin-left:10px;}
+#ld-page .ld-enemy{position:relative;list-style:none;padding-left:44px;}
+#ld-page .ld-enemy::before{content:"";position:absolute;left:4px;top:40px;bottom:40px;width:1px;background:var(--ld-line);}
+#ld-page .ld-enemy-bar{position:absolute;left:4px;top:40px;width:1px;height:calc((100% - 80px) * var(--p,0));background:var(--ld-accent);}
+#ld-page .ld-enemy-item{position:relative;padding:34px 0;border-bottom:1px solid var(--ld-line-soft);}
+#ld-page .ld-enemy-item:last-child{border-bottom:0;}
+#ld-page .ld-enemy-item::before{
+  content:"";position:absolute;left:-44px;top:39px;width:9px;height:9px;border-radius:50%;
+  background:var(--ld-surface);border:1px solid var(--ld-dim);transition:all .4s ease;
+}
+#ld-page .ld-enemy-no{display:block;margin-bottom:12px;font-size:.78rem;font-weight:700;letter-spacing:.1em;color:var(--ld-dim);transition:color .4s ease;}
+#ld-page .ld-enemy h3{font-size:clamp(1.3rem,2.3vw,1.7rem);line-height:1.25;letter-spacing:-.02em;font-weight:700;color:var(--ld-text);max-width:26ch;}
+#ld-page .ld-enemy h3::before{content:"„";color:var(--ld-accent);}
+#ld-page .ld-enemy h3::after{content:"“";color:var(--ld-accent);}
+#ld-page .ld-enemy p{margin-top:12px;font-size:1rem;max-width:52ch;color:var(--ld-muted);}
+#ld-page .ld-enemy.is-js .ld-enemy-item{opacity:.22;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);}
+#ld-page .ld-enemy.is-js .ld-enemy-item.is-seen{opacity:.42;transform:none;}
+#ld-page .ld-enemy.is-js .ld-enemy-item.is-active{opacity:1;}
+#ld-page .ld-enemy-item.is-active::before{background:var(--ld-accent);border-color:var(--ld-accent);box-shadow:0 0 0 6px rgba(218,196,109,.14);}
+#ld-page .ld-enemy-item.is-active .ld-enemy-no{color:var(--ld-accent);}
+@media (max-width:900px){
+  #ld-page .ld-enemy-wrap{grid-template-columns:1fr;gap:36px;}
+  #ld-page .ld-enemy-head{position:static;}
+  #ld-page .ld-enemy-count{display:none;}
+  #ld-page .ld-enemy{padding-left:30px;}
+  #ld-page .ld-enemy-item::before{left:-30px;}
+  #ld-page .ld-enemy-item{padding:26px 0;}
+  #ld-page .ld-enemy.is-js .ld-enemy-item.is-seen{opacity:.6;}
+}
+
+#ld-page #team h2{max-width:22ch;}
+#ld-page .ld-video-sec{background:var(--ld-surface);}
+#ld-page .ld-video-sec .ld-video{margin-top:40px;}
+#ld-page .ld-person{
+  display:grid;grid-template-columns:minmax(0,380px) 1fr;gap:56px;align-items:start;margin-top:44px;
+}
+#ld-page .ld-portrait{display:flex;flex-direction:column;gap:10px;}
+#ld-page .ld-portrait img{display:block;width:100%;height:auto;border-radius:var(--ld-radius);border:1px solid var(--ld-line);}
+#ld-page .ld-portrait .ld-portrait-main{aspect-ratio:4/5;object-fit:cover;}
+#ld-page .ld-person-body{display:flex;flex-direction:column;gap:20px;}
+#ld-page .ld-person-name{
+  font-family:var(--ld-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ld-accent);
+}
+#ld-page .ld-person-claim{
+  font-size:clamp(1.3rem,2.6vw,1.85rem);line-height:1.25;letter-spacing:-.02em;
+  font-weight:700;color:var(--ld-text);max-width:24ch;
+}
+#ld-page .ld-person ul{display:flex;flex-direction:column;gap:13px;margin-top:2px;}
+#ld-page .ld-person li{display:flex;gap:12px;font-size:.97rem;color:var(--ld-muted);line-height:1.5;}
+#ld-page .ld-person li svg{flex:0 0 auto;width:17px;height:17px;margin-top:4px;color:var(--ld-dim);}
+
+/* --- Video --- */
+#ld-page .ld-video{
+  margin-top:52px;border:1px solid var(--ld-line);border-radius:var(--ld-radius);
+  background:var(--ld-surface-2);overflow:hidden;
+}
+#ld-page .ld-video-poster{
+  aspect-ratio:16/9;width:100%;border:0;cursor:pointer;
+  background:linear-gradient(180deg,rgba(10,11,13,.25),rgba(10,11,13,.6)),url("https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@8b71625/webdesign/img-c8bdf4090c.jpg") center/cover no-repeat,var(--ld-surface-2);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+  color:var(--ld-text);font-family:var(--ld-font);padding:24px;
+  transition:background .15s ease;
+}
+#ld-page .ld-video-poster:hover .ld-video-play{transform:scale(1.06);}
+#ld-page .ld-video-play{transition:transform .2s ease;box-shadow:0 10px 40px rgba(0,0,0,.45);}
+#ld-page .ld-video-label,#ld-page .ld-video-sub{text-shadow:0 1px 12px rgba(0,0,0,.7);}
+#ld-page .ld-video-sub{color:var(--ld-text);opacity:.8;}
+#ld-page .ld-video-play{
+  width:66px;height:66px;border-radius:100px;background:var(--ld-accent);
+  display:flex;align-items:center;justify-content:center;
+}
+#ld-page .ld-video-play svg{width:22px;height:22px;color:var(--ld-accent-ink);}
+#ld-page .ld-video-label{font-size:1.02rem;font-weight:600;letter-spacing:-.01em;}
+#ld-page .ld-video-sub{font-size:.86rem;color:var(--ld-dim);}
+#ld-page .ld-video iframe{display:block;width:100%;aspect-ratio:16/9;border:0;}
+#ld-page .ld-video-fallback{
+  padding:13px 20px;border-top:1px solid var(--ld-line);font-size:.84rem;color:var(--ld-dim);
+}
+#ld-page .ld-video-fallback a{color:var(--ld-muted);}
+
+/* --- Preise --- */
+#ld-page .ld-pricing-head{text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px;}
+#ld-page .ld-pricing-head h2{max-width:18ch;}
+#ld-page .ld-pricing-head p{max-width:56ch;}
+
+#ld-page .ld-toggle{
+  display:inline-flex;align-items:center;gap:4px;padding:5px;
+  border:1px solid var(--ld-line);border-radius:100px;background:var(--ld-surface);
+}
+#ld-page .ld-toggle button{
+  border:0;background:none;cursor:pointer;border-radius:100px;padding:9px 20px;
+  font-family:var(--ld-font);font-size:.9rem;font-weight:600;color:var(--ld-muted);
+  display:inline-flex;align-items:center;gap:8px;transition:color .2s ease,background .2s ease;
+}
+#ld-page .ld-toggle button:hover{color:var(--ld-text);}
+#ld-page .ld-toggle button[aria-pressed="true"]{background:var(--ld-accent);color:var(--ld-accent-ink);}
+#ld-page .ld-toggle em{
+  font-style:normal;font-family:var(--ld-mono);font-size:.64rem;letter-spacing:.08em;
+  text-transform:uppercase;padding:3px 7px;border-radius:100px;
+  background:rgba(218,196,109,.14);color:var(--ld-accent);
+}
+#ld-page .ld-toggle button[aria-pressed="true"] em{background:rgba(10,11,13,.18);color:var(--ld-accent-ink);}
+
+#ld-page .ld-market{
+  margin:30px auto 0;max-width:760px;padding:16px 22px;
+  border:1px solid var(--ld-line);border-radius:var(--ld-radius);background:var(--ld-surface);
+  display:flex;flex-wrap:wrap;gap:6px 36px;align-items:baseline;justify-content:center;text-align:center;
+}
+#ld-page .ld-market div{display:flex;flex-direction:column;gap:2px;}
+#ld-page .ld-market b{font-family:var(--ld-mono);font-size:.98rem;font-weight:500;color:var(--ld-muted);}
+#ld-page .ld-market span{font-size:.79rem;color:var(--ld-dim);}
+#ld-page .ld-market .ld-market-src{width:100%;font-size:.75rem;color:var(--ld-dim);margin-top:2px;}
+
+#ld-page .ld-plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px;align-items:start;}
+#ld-page .ld-plan{
+  position:relative;border:1px solid var(--ld-line);border-radius:18px;padding:30px 26px 28px;
+  background:var(--ld-surface);display:flex;flex-direction:column;gap:16px;
+}
+#ld-page .ld-plan.is-lead{border-color:var(--ld-accent);background:var(--ld-surface-2);}
+#ld-page .ld-plan-badge{
+  position:absolute;top:-11px;right:22px;background:var(--ld-accent);color:var(--ld-accent-ink);
+  font-family:var(--ld-mono);font-size:.63rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;padding:5px 12px;border-radius:100px;
+}
+#ld-page .ld-plan-name{font-size:1.3rem;font-weight:700;letter-spacing:-.02em;color:var(--ld-text);}
+#ld-page .ld-plan-desc{font-size:.9rem;line-height:1.5;color:var(--ld-muted);max-width:none;min-height:3em;}
+#ld-page .ld-price{
+  display:flex;align-items:baseline;gap:7px;
+  font-family:var(--ld-mono);font-weight:700;font-variant-numeric:tabular-nums;
+  font-size:2.5rem;line-height:1;letter-spacing:-.04em;color:var(--ld-text);
+}
+#ld-page .ld-price u{
+  text-decoration:none;font-family:var(--ld-font);font-size:.82rem;font-weight:400;
+  letter-spacing:0;word-spacing:0;color:var(--ld-dim);
+}
+#ld-page .ld-price.is-soft{font-family:var(--ld-font);font-size:1.42rem;letter-spacing:-.02em;word-spacing:0;}
+#ld-page .ld-price-note{font-size:.78rem;color:var(--ld-dim);margin-top:-8px;}
+#ld-page .ld-plan-actions{display:flex;flex-direction:column;gap:9px;}
+#ld-page .ld-feat{border-top:1px solid var(--ld-line);padding-top:18px;display:flex;flex-direction:column;gap:11px;}
+#ld-page .ld-feat-label{
+  font-family:var(--ld-mono);font-size:.64rem;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ld-dim);
+}
+#ld-page .ld-feat-intro{font-size:.87rem;font-weight:600;color:var(--ld-text);}
+#ld-page .ld-plan ul{display:flex;flex-direction:column;gap:10px;}
+#ld-page .ld-plan li{display:flex;gap:10px;font-size:.89rem;color:var(--ld-muted);line-height:1.45;}
+#ld-page .ld-plan li svg{flex:0 0 auto;width:15px;height:15px;margin-top:3px;color:var(--ld-accent);}
+#ld-page .ld-flow-link{
+  background:none;border:0;padding:2px 0 0;cursor:pointer;font-family:var(--ld-font);
+  font-size:.85rem;color:var(--ld-dim);text-decoration:underline;text-underline-offset:3px;
+  align-self:center;transition:color .15s ease;
+}
+#ld-page .ld-flow-link:hover{color:var(--ld-muted);}
+#ld-page .ld-plans.is-two{grid-template-columns:repeat(2,1fr);max-width:1040px;margin-left:auto;margin-right:auto;}
+#ld-page .ld-plan-care{font-size:.86rem;line-height:1.5;color:var(--ld-text);max-width:none;padding:10px 12px;border:1px solid var(--ld-line);border-radius:10px;}
+#ld-page .ld-plans-note{text-align:center;margin:22px auto 0;font-size:.9rem;color:var(--ld-dim);}
+@media (max-width:900px){#ld-page .ld-plans,#ld-page .ld-plans.is-two{grid-template-columns:1fr;}}
+
+/* --- Cookie-Banner --- */
+#ld-page .ld-consent{
+  position:fixed;left:16px;bottom:16px;z-index:200;width:min(420px,calc(100vw - 32px));
+  background:var(--ld-surface-2);border:1px solid var(--ld-line);border-radius:var(--ld-radius);
+  padding:20px 20px 18px;box-shadow:0 24px 60px -20px rgba(0,0,0,.8);
+  opacity:0;transform:translateY(16px);transition:opacity .3s ease,transform .3s cubic-bezier(.2,.7,.2,1);
+}
+#ld-page .ld-consent[hidden]{display:none;}
+#ld-page .ld-consent.is-in{opacity:1;transform:none;}
+#ld-page .ld-consent strong{display:block;font-size:.98rem;margin-bottom:6px;}
+#ld-page .ld-consent p{font-size:.86rem;line-height:1.5;color:var(--ld-muted);max-width:none;}
+#ld-page .ld-consent p a{color:var(--ld-text);}
+#ld-page .ld-consent-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px;}
+#ld-page .ld-consent-btn{
+  font:600 .88rem var(--ld-font);padding:11px 12px;border-radius:100px;cursor:pointer;
+  background:transparent;color:var(--ld-text);border:1px solid var(--ld-dim);transition:border-color .15s ease,background .15s ease;
+}
+#ld-page .ld-consent-btn:hover{border-color:var(--ld-muted);}
+#ld-page .ld-consent-btn.is-primary{background:var(--ld-accent);color:var(--ld-accent-ink);border-color:var(--ld-accent);}
+#ld-page .ld-consent-btn.is-primary:hover{filter:brightness(1.06);}
+#ld-page .ld-consent-open{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
+
+/* --- Dialog (Ablauf je Produkt) --- */
+#ld-page dialog.ld-modal{
+  position:fixed;inset:0;margin:auto;height:fit-content;
+  width:min(560px,calc(100vw - 32px));max-height:88vh;
+  border:1px solid var(--ld-line);border-radius:var(--ld-radius);
+  background:var(--ld-surface);color:var(--ld-text);padding:0;overflow:hidden;
+  font-family:var(--ld-font);line-height:1.6;
+  display:none;flex-direction:column;
+}
+#ld-page dialog.ld-modal[open]{display:flex;}
+#ld-page dialog.ld-modal::backdrop{background:rgba(6,7,9,.78);backdrop-filter:blur(3px);}
+#ld-page .ld-modal-head{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
+  padding:26px 26px 18px;border-bottom:1px solid var(--ld-line);
+}
+#ld-page .ld-modal-head h3{font-size:1.22rem;}
+#ld-page .ld-modal-head p{font-size:.88rem;margin-top:5px;}
+#ld-page .ld-modal-close{
+  flex:0 0 auto;background:none;border:1px solid var(--ld-line);border-radius:100px;
+  width:32px;height:32px;cursor:pointer;color:var(--ld-muted);
+  display:flex;align-items:center;justify-content:center;transition:border-color .15s ease;
+}
+#ld-page .ld-modal-close:hover{border-color:var(--ld-dim);color:var(--ld-text);}
+#ld-page .ld-modal-close svg{width:14px;height:14px;}
+#ld-page .ld-modal-body{padding:8px 26px 26px;overflow-y:auto;flex:1 1 auto;}
+#ld-page .ld-modal-head,#ld-page .ld-modal-foot{flex:0 0 auto;}
+#ld-page .ld-modal-body ol{list-style:none;counter-reset:ldstep;}
+#ld-page .ld-modal-body li{
+  counter-increment:ldstep;display:grid;grid-template-columns:34px 1fr;gap:14px;
+  padding:16px 0;border-bottom:1px solid var(--ld-line-soft);
+}
+#ld-page .ld-modal-body li:last-child{border-bottom:0;padding-bottom:4px;}
+#ld-page .ld-modal-body li::before{
+  content:counter(ldstep,decimal-leading-zero);font-family:var(--ld-mono);font-size:.8rem;
+  font-weight:700;color:var(--ld-dim);padding-top:3px;
+}
+#ld-page .ld-modal-body b{display:block;font-weight:600;font-size:.98rem;color:var(--ld-text);}
+#ld-page .ld-modal-body span{display:block;font-size:.9rem;color:var(--ld-muted);margin-top:3px;}
+#ld-page .ld-modal-foot{
+  padding:16px 26px;border-top:1px solid var(--ld-line);background:var(--ld-surface-2);
+  font-size:.88rem;color:var(--ld-muted);border-radius:0 0 var(--ld-radius) var(--ld-radius);
+}
+#ld-page .ld-modal-foot b{color:var(--ld-text);font-weight:600;}
+
+/* --- Ads --- */
+#ld-page .ld-ads{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start;}
+#ld-page .ld-ads-box{
+  border:1px solid var(--ld-line);border-radius:var(--ld-radius);background:var(--ld-surface);
+  padding:28px 26px;display:flex;flex-direction:column;gap:18px;
+}
+#ld-page .ld-ads-price{display:flex;flex-wrap:wrap;gap:26px;}
+#ld-page .ld-ads-price div{display:flex;flex-direction:column;gap:4px;}
+#ld-page .ld-ads-price b{font-family:var(--ld-mono);font-size:1.45rem;font-weight:700;letter-spacing:-.03em;color:var(--ld-text);}
+#ld-page .ld-ads-price span{font-size:.8rem;color:var(--ld-dim);}
+#ld-page .ld-goals{display:flex;flex-direction:column;gap:12px;}
+#ld-page .ld-goals li{display:flex;gap:11px;font-size:.95rem;color:var(--ld-muted);}
+#ld-page .ld-goals svg{flex:0 0 auto;width:16px;height:16px;margin-top:3px;color:var(--ld-dim);}
+
+/* --- Kundenstimmen --- */
+#ld-page .ld-testis{display:grid;grid-template-columns:3.1fr 1fr;gap:18px;margin-top:44px;align-items:start;}
+#ld-page .ld-testi .ld-video{margin-top:0;}
+#ld-page .ld-testi .ld-video-poster{background-position:center;background-size:cover;background-repeat:no-repeat;}
+#ld-page .ld-testi.is-tall .ld-video-poster,#ld-page .ld-testi.is-tall iframe{aspect-ratio:9/16;}
+#ld-page .ld-testi.is-tall .ld-video-label{font-size:.92rem;}
+#ld-page .ld-testi figcaption{display:flex;flex-direction:column;gap:2px;margin-top:14px;}
+#ld-page .ld-testi figcaption b{font-weight:600;color:var(--ld-text);}
+#ld-page .ld-testi figcaption span{font-size:.86rem;color:var(--ld-dim);}
+#ld-page .ld-testis + .ld-cases{margin-top:28px;}
+@media (max-width:820px){
+  #ld-page .ld-testis{grid-template-columns:1fr;}
+  #ld-page .ld-testi.is-tall{width:100%;max-width:280px;margin:0 auto;}
+}
+
+/* --- Flächen-Rhythmus --- */
+#ld-page #ergebnisse{background:radial-gradient(70% 55% at 50% 0%,rgba(218,196,109,.075),transparent 70%),var(--ld-bg);}
+#ld-page #projekte{background:var(--ld-surface);}
+
+/* --- Cases --- */
+#ld-page .ld-cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:44px;}
+#ld-page .ld-case{
+  border:1px solid var(--ld-line);border-radius:var(--ld-radius);padding:28px 26px;
+  display:flex;flex-direction:column;gap:12px;
+}
+#ld-page .ld-case-metric{
+  font-family:var(--ld-mono);font-weight:700;font-variant-numeric:tabular-nums;
+  font-size:clamp(1.55rem,3vw,2rem);line-height:1.1;letter-spacing:-.03em;color:var(--ld-text);
+}
+#ld-page .ld-case-who{
+  font-family:var(--ld-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ld-dim);
+}
+#ld-page .ld-case p{font-size:.94rem;max-width:none;}
+
+/* --- Projekte --- */
+#ld-page .ld-projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:28px 18px;margin-top:28px;}
+#ld-page .ld-projects.is-feature{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 24px;margin-top:44px;}
+#ld-page .ld-project{display:flex;flex-direction:column;gap:6px;text-decoration:none;}
+#ld-page .ld-shot{
+  display:block;position:relative;aspect-ratio:16/10;overflow:hidden;margin-bottom:10px;
+  border-radius:10px;border:1px solid var(--ld-line);background:var(--ld-surface-2);
+  box-shadow:0 18px 40px -24px rgba(0,0,0,.8);transition:border-color .2s ease,transform .3s cubic-bezier(.2,0,0,1);
+}
+#ld-page .is-feature .ld-shot{border-radius:14px;margin-bottom:14px;}
+#ld-page .ld-shot img{display:block;width:100%;height:auto;transition:transform 4.5s cubic-bezier(.45,0,.2,1);}
+#ld-page .is-feature .ld-shot img{transition-duration:6s;}
+@media (hover:hover){
+  #ld-page .ld-project:hover .ld-shot{border-color:var(--ld-dim);transform:translateY(-3px);}
+  #ld-page .ld-project:hover .ld-shot img{transform:translateY(-66.6%);}
+}
+#ld-page .ld-project-top{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+#ld-page .ld-project-name{font-weight:600;font-size:.98rem;letter-spacing:-.01em;color:var(--ld-text);}
+#ld-page .is-feature .ld-project-name{font-size:1.2rem;}
+#ld-page .ld-project-top svg{flex:0 0 auto;width:14px;height:14px;color:var(--ld-dim);transition:color .2s ease;}
+#ld-page .ld-project:hover .ld-project-top svg{color:var(--ld-accent);}
+#ld-page .ld-project-meta{font-size:.82rem;color:var(--ld-dim);}
+@media (max-width:700px){
+  #ld-page .ld-projects.is-feature{grid-template-columns:1fr;}
+  #ld-page .ld-projects{grid-template-columns:1fr 1fr;gap:22px 14px;}
+}
+
+/* --- Regionen --- */
+#ld-page .ld-region-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:center;}
+#ld-page .ld-map{position:relative;
+  -webkit-mask-image:radial-gradient(120% 110% at 62% 56%,#000 52%,transparent 80%);
+          mask-image:radial-gradient(120% 110% at 62% 56%,#000 52%,transparent 80%);}
+#ld-page .ld-map-svg{display:block;width:100%;height:auto;overflow:visible;}
+#ld-page .ld-map-de{fill:none;stroke:rgba(255,255,255,.14);stroke-width:1.2;stroke-linejoin:round;}
+#ld-page .ld-map-by{fill:rgba(255,255,255,.05);stroke:var(--ld-muted);stroke-width:2.2;stroke-linejoin:round;}
+#ld-page .ld-map-country{fill:var(--ld-dim);font:600 15px var(--ld-font);letter-spacing:.18em;text-transform:uppercase;}
+#ld-page .ld-pin path{fill:var(--ld-text);}
+#ld-page .ld-pin circle{fill:var(--ld-bg);}
+#ld-page .ld-pin text{fill:var(--ld-text);font:600 19px var(--ld-font);paint-order:stroke;stroke:var(--ld-bg);stroke-width:5px;stroke-linejoin:round;}
+#ld-page .ld-pin.is-home path{fill:var(--ld-accent);}
+#ld-page .ld-pin.is-home text{fill:var(--ld-accent);font-size:23px;font-weight:700;}
+#ld-page .ld-map.is-js .ld-pin{opacity:0;transform-box:fill-box;}
+#ld-page .ld-map.is-in .ld-pin{animation:ldPin .55s cubic-bezier(.2,.8,.2,1.2) both;animation-delay:calc(var(--i) * 70ms);}
+@keyframes ldPin{from{opacity:0;translate:0 -14px;}to{opacity:1;translate:0 0;}}
+@media (max-width:900px){#ld-page .ld-region-grid{grid-template-columns:1fr;gap:28px;}}
+@media (max-width:600px){
+  #ld-page .ld-map{margin:0 -12px;}
+  #ld-page .ld-pin text{font-size:30px;stroke-width:8px;}
+  #ld-page .ld-pin.is-home text{font-size:34px;}
+  #ld-page .ld-map-country{font-size:22px;}
+}
+
+/* --- FAQ --- */
+#ld-page .ld-faq{margin-top:40px;border-top:1px solid var(--ld-line);}
+#ld-page .ld-faq details{border-bottom:1px solid var(--ld-line);}
+#ld-page .ld-faq summary{
+  cursor:pointer;list-style:none;padding:22px 40px 22px 0;position:relative;
+  font-size:1.04rem;font-weight:600;color:var(--ld-text);letter-spacing:-.01em;
+}
+#ld-page .ld-faq summary::-webkit-details-marker{display:none;}
+#ld-page .ld-faq summary::after{
+  content:"";position:absolute;right:6px;top:50%;width:11px;height:11px;
+  border-right:1.6px solid var(--ld-dim);border-bottom:1.6px solid var(--ld-dim);
+  transform:translateY(-70%) rotate(45deg);transition:transform .15s cubic-bezier(.2,0,0,1);
+}
+#ld-page .ld-faq details[open] summary::after{transform:translateY(-20%) rotate(-135deg);}
+#ld-page .ld-faq p{padding:0 0 24px;font-size:.98rem;}
+
+/* --- Schluss --- */
+#ld-page .ld-cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:48px;}
+#ld-page .ld-cta-row > span{font-size:.92rem;color:var(--ld-muted);}
+#ld-page .ld-cta-row.is-tight{margin-top:14px;}
+#ld-page .ld-final{text-align:center;padding:112px 0;background:var(--ld-accent);border-top:0;}
+#ld-page .ld-final h2{color:var(--ld-accent-ink);}
+#ld-page .ld-final .ld-lead{color:rgba(10,11,13,.74);}
+#ld-page .ld-final .ld-btn{background:var(--ld-accent-ink);color:var(--ld-accent);}
+#ld-page .ld-final .ld-contact{border-top-color:rgba(10,11,13,.16);color:rgba(10,11,13,.6);}
+#ld-page .ld-final .ld-contact a{color:rgba(10,11,13,.82);}
+#ld-page .ld-final .ld-contact a:hover{color:var(--ld-accent-ink);}
+#ld-page .ld-final h2{max-width:20ch;margin:0 auto;}
+#ld-page .ld-final p{margin:22px auto 0;text-align:center;}
+#ld-page .ld-final .ld-btn{margin-top:36px;}
+#ld-page .ld-contact{
+  margin-top:42px;padding-top:26px;border-top:1px solid var(--ld-line);
+  display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;
+  font-size:.86rem;color:var(--ld-dim);
+}
+#ld-page .ld-contact a{text-decoration:none;color:var(--ld-muted);}
+#ld-page .ld-contact a:hover{color:var(--ld-text);}
+
+@media (max-width:900px){
+  #ld-page .ld-person{grid-template-columns:1fr;gap:28px;}
+  #ld-page .ld-portrait{max-width:340px;}
+}
+@media (max-width:860px){
+  #ld-page .ld-ads{grid-template-columns:1fr;gap:32px;}
+  #ld-page .ld-nav-links{display:none;}
+  #ld-page section{padding:72px 0;}
+  #ld-page .ld-final{padding:80px 0;}
+}
+@media (prefers-reduced-motion:reduce){
+  #ld-page *,#ld-page *::before,#ld-page *::after{transition-duration:.01ms !important;animation-duration:.01ms !important;}
+  #ld-page .ld-btn:hover{transform:none;}
+}
+</style>
+
+<!-- ================= NAV ================= -->
+<nav class="ld-nav">
+  <div class="ld-wrap ld-nav-in">
+    <a href="#ld-page" class="ld-logo">Leaddrop</a>
+    <div class="ld-nav-links">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#projekte">Projekte</a>
+      <a href="#team">Wer wir sind</a>
+      <a href="#fragen">Fragen</a>
+    </div>
+    <a class="ld-nav-cta" href="https://calendly.com/leaddrop/erstgespraech">Kostenlose Beratung</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="ld-hero">
+  <div class="ld-hero-bg" aria-hidden="true">
+    <div class="ld-hero-poster"></div>
+    <video id="ld-hero-video" muted playsinline loop preload="none"></video>
+    <div class="ld-hero-veil"></div>
+  </div>
+  <div class="ld-wrap">
+    <span class="ld-eyebrow">Websites für regionale Unternehmen</span>
+    <h1>Websites, die dir Kunden aus deiner Region bringen.</h1>
+    <p class="ld-lead">Die meisten Websites kosten Geld. Unsere bringen welches zurück. Seit 2020 bauen wir aus Passau Websites für Selbständige und KMU. Websites, die in deiner Region gefunden werden und klar sagen, warum man dich anrufen sollte.</p>
+    <div class="ld-hero-cta">
+      <a class="ld-btn" href="https://calendly.com/leaddrop/erstgespraech">
+        Kostenlose Beratung buchen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="ld-btn-ghost" href="#projekte">Erst die Projekte ansehen</a>
+    </div>
+    <div class="ld-proof">
+      <div class="ld-proof-item"><span class="ld-stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.6l2.9 6 6.5.9-4.7 4.6 1.1 6.5L12 17.5l-5.8 3.1 1.1-6.5L2.6 9.5l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.6l2.9 6 6.5.9-4.7 4.6 1.1 6.5L12 17.5l-5.8 3.1 1.1-6.5L2.6 9.5l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.6l2.9 6 6.5.9-4.7 4.6 1.1 6.5L12 17.5l-5.8 3.1 1.1-6.5L2.6 9.5l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.6l2.9 6 6.5.9-4.7 4.6 1.1 6.5L12 17.5l-5.8 3.1 1.1-6.5L2.6 9.5l6.5-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.6l2.9 6 6.5.9-4.7 4.6 1.1 6.5L12 17.5l-5.8 3.1 1.1-6.5L2.6 9.5l6.5-.9z"/></svg></span><b>5,0</b><span>aus 14 Google-Bewertungen</span></div>
+      <div class="ld-proof-item"><b>100 %</b><span>Weiterempfehlung laut Bewertungsplattformen</span></div>
+      <div class="ld-proof-item"><b>Seit 2020</b><span>Websites aus Passau</span></div>
+      <div class="ld-proof-item"><b>Eine</b><span>feste Ansprechpartnerin</span></div>
+    </div>
+    <div class="ld-badges"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@8b71625/webdesign/img-a9bbccdb73.png" alt="Google" style="height:24px" loading="lazy"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@8b71625/webdesign/img-0a166dc98a.png" alt="Trustpilot" style="height:24px" loading="lazy"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@8b71625/webdesign/img-c61e7d34a4.png" alt="Der Mittelstand. BVMW, Mitgliedsunternehmen" style="height:38px" loading="lazy"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@8b71625/webdesign/img-2e4ee650f6.png" alt="Meta Business Partners" style="height:30px" loading="lazy"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@8b71625/webdesign/img-01bf4a55e1.png" alt="founders Magazin" style="height:26px" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- ================= PROBLEM ================= -->
+<section id="problem">
+  <div class="ld-wrap">
+    <span class="ld-kicker">Der Ausgangspunkt</span>
+    <h2>Deine Website sieht gut aus. Und bringt trotzdem nichts.</h2>
+    <div class="ld-problem-grid">
+      <div>
+        <h3>Empfehlungen sind deine einzige Quelle</h3>
+        <p>Läuft — bis der Monat mal ruhig ist. Planbar ist das nicht.</p>
+      </div>
+      <div>
+        <h3>In deiner Region kennt dich keiner</h3>
+        <p>Wer 20 Kilometer weiter sucht, findet drei andere. Dich nicht.</p>
+      </div>
+      <div>
+        <h3>Selbst gebaut, nie fertig geworden</h3>
+        <p>Ein Baukasten-Abo, drei Wochenenden, eine Seite, die keiner findet.</p>
+      </div>
+    </div>
+    <p class="ld-turn">Das liegt selten am Design. Es liegt daran, dass deine Seite nicht in einem Satz sagt, was du für wen tust — und dass die Leute in deiner Region sie gar nicht erst sehen.</p>
+    <div class="ld-cta-row">
+      <a class="ld-btn" href="https://calendly.com/leaddrop/erstgespraech">Kostenlose Beratung buchen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <span>Wir schauen in 15 Minuten, woran es bei dir hängt.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AGENTUR-ANALYSE ================= -->
+<section class="ld-analysis" id="analyse">
+  <div class="ld-wrap ld-enemy-wrap">
+    <div class="ld-enemy-head">
+      <span class="ld-kicker">Warum wir bauen, wie wir bauen</span>
+      <h2>Wir haben 41 Agenturen analysiert. Diese&nbsp;Seite ist das Ergebnis.</h2>
+      <p class="ld-lead" style="margin-top:20px">41 Anbieter im D-A-CH-Raum, 21 Websites im Detail geprüft. Was dabei rauskam, erklärt ziemlich gut, warum so viele Unternehmer von Agenturen die Nase voll haben.</p>
+      <div class="ld-enemy-count" aria-hidden="true"><b id="ld-enemy-cur">01</b><span>/ 06</span><em>Sätze, die du von Agenturen kennst</em></div>
+      <a class="ld-btn" href="https://calendly.com/leaddrop/erstgespraech">Bei uns läuft das anders <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <ol class="ld-enemy" id="ld-enemy">
+      <span class="ld-enemy-bar" aria-hidden="true"></span>
+        <li class="ld-enemy-item"><span class="ld-enemy-no">01</span><h3>Sagen Sie mir Bescheid, wenn Sie so weit sind</h3><p>Du unterschreibst im Januar und gehst im Sommer live. Bis dahin hat sich dein Angebot zweimal geändert und die Texte stimmen nicht mehr.</p></li>
+        <li class="ld-enemy-item"><span class="ld-enemy-no">02</span><h3>Wer ist eigentlich mein Ansprechpartner?</h3><p>Im Verkaufsgespräch sitzt der Chef am Tisch. Danach schreibst du an ein Ticketsystem und wartest drei Werktage auf eine Antwort.</p></li>
+        <li class="ld-enemy-item"><span class="ld-enemy-no">03</span><h3>Das ist leider nicht im Umfang enthalten</h3><p>Eine Telefonnummer ändern: 45 Minuten, abgerechnet. Am Ende zahlst du dafür, dass du nachgefragt hast.</p></li>
+        <li class="ld-enemy-item"><span class="ld-enemy-no">04</span><h3>Ihr Projekt betreut unser Team</h3><p>Verkauft vom Senior, gebaut von dem, der gerade Zeit hat. Gelernt wird an deinem Projekt — und den Unterschied siehst du im Ergebnis.</p></li>
+        <li class="ld-enemy-item"><span class="ld-enemy-no">05</span><h3>Sieht doch super aus, oder?</h3><p>Die Seite gewinnt vielleicht einen Designpreis. Wie viele Anfragen sie bringt, hat nie jemand gemessen. Auch nicht nach einem Jahr.</p></li>
+        <li class="ld-enemy-item"><span class="ld-enemy-no">06</span><h3>Die Zugänge liegen bei uns</h3><p>Domain, Hosting und Logins laufen über die Agentur. Wer wechseln will, fängt von vorn an.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= WER WIR SIND ================= -->
+<section id="team">
+  <div class="ld-wrap">
+    <span class="ld-kicker">Und dann sind da wir</span>
+    <h2>Bei uns hat die Agentur ein Gesicht. Und einen Namen.</h2>
+    <div class="ld-person">
+      <div class="ld-portrait">
+        <img class="ld-portrait-main" src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@8b71625/webdesign/img-9419b6cde4.jpg" alt="Florentina, Ansprechpartnerin bei Leaddrop" width="468" height="585">
+      </div>
+      <div class="ld-person-body">
+        <span class="ld-person-name">Florentina · deine Ansprechpartnerin</span>
+        <p class="ld-person-claim">Du hast eine Nummer, eine Person, eine Antwort.</p>
+        <p>Florentina hat ihre komplette Ausbildung bei <strong>Tobias Eder</strong> gemacht — dem Marketing Guy, dem große Marken vertrauen und der mehrere Unternehmen an die Spitze ihres Marktes gebracht hat. Gelernt hat sie das nicht im Seminarraum, sondern an echten Kundenprojekten mit echten Budgets, bei jemandem, der es kann.</p>
+        <p>Heute führt sie deine Projekte selbst. Vom ersten Gespräch bis Monate nach dem Livegang — dieselbe Person, dieselbe Nummer.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Eine Ansprechpartnerin</strong> von Anfang an — kein Ticketsystem, kein Weiterreichen nach Vertragsschluss.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Ausgebildet an echten Projekten</strong>, nicht an Schulungsfolien. 14 Projekte sind live, du kannst sie dir alle ansehen.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Festpreis vor dem Start.</strong> Keine Rechnung dafür, dass du eine Frage gestellt hast.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Tempo statt Warteschleife.</strong> Wir bauen KI-gestützt — das spart Wochen, die andere in Rechnung stellen.</span></li>
+        </ul>
+        <div class="ld-cta-row is-tight">
+          <a class="ld-btn" href="https://calendly.com/leaddrop/erstgespraech">Gespräch mit Florentina buchen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <span>15 Minuten, kostenlos, unverbindlich.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VIDEO ================= -->
+<section id="kennenlernen" class="ld-video-sec">
+  <div class="ld-wrap">
+    <span class="ld-kicker">In zwei Minuten</span>
+    <h2>Schau, wer wir sind und was wir machen.</h2>
+    <div class="ld-video">
+      <button type="button" class="ld-video-poster" id="ld-video-trigger" data-drive="1RCi6Yx0uWpMt-lw9HJUgmlh8RZl7qp4p" data-title="Leaddrop stellt sich vor">
+        <span class="ld-video-play">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+        </span>
+        <span class="ld-video-label">Lern uns in zwei Minuten kennen</span>
+        <span class="ld-video-sub">Video abspielen</span>
+      </button>
+      <p class="ld-video-fallback">Video lädt nicht? <a href="https://drive.google.com/file/d/1RCi6Yx0uWpMt-lw9HJUgmlh8RZl7qp4p/view" target="_blank" rel="noopener">Direkt öffnen</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LEISTUNGEN ================= -->
+<section id="leistungen">
+  <div class="ld-wrap">
+    <div class="ld-pricing-head">
+      <span class="ld-kicker" style="margin:0">Leistungen</span>
+      <h2>Zwei Wege zu deiner Website.</h2>
+      <p>Schnell und schlank oder mehrseitig mit persönlicher Betreuung. Welcher Weg zu dir passt, klären wir in einer kostenlosen Beratung. Danach bekommst du einen Festpreis, schriftlich.</p>
+    </div>
+
+    <div class="ld-plans is-two">
+
+      <div class="ld-plan">
+        <span class="ld-plan-name">Fast Track</span>
+        <p class="ld-plan-desc">Der schnelle Weg zu einer Website, die Anfragen bringt. KI-gestützt gebaut, in wenigen Tagen online.</p>
+        <p class="ld-plan-care">Ohne persönliche Betreuung. Begleitung bekommst du auf Wunsch dazu.</p>
+        <div class="ld-plan-actions">
+          <a class="ld-btn ld-btn-sm" href="https://calendly.com/leaddrop/erstgespraech">Kostenlose Beratung buchen</a>
+          <button type="button" class="ld-flow-link" data-flow="fasttrack">Wie läuft das ab?</button>
+        </div>
+        <div class="ld-feat">
+          <span class="ld-feat-label">Leistungen</span>
+          <span class="ld-feat-intro">Alles, was eine Seite braucht:</span>
+          <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Onepager mit klarer Struktur</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Texte, die auf Anfragen zielen</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Mobil sauber, schnell geladen</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Für deinen Ort bei Google auffindbar</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Eine Korrekturrunde inklusive</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ld-plan is-lead">
+        <span class="ld-plan-name">Excellence Track</span>
+        <p class="ld-plan-desc">Die mehrseitige Unternehmenswebsite als Fundament. Für jede Leistung und jede Region, in der du Kunden willst.</p>
+        <p class="ld-plan-care">Persönliche Betreuung immer inklusive, vom ersten Gespräch bis nach dem Livegang.</p>
+        <div class="ld-plan-actions">
+          <a class="ld-btn ld-btn-sm" href="https://calendly.com/leaddrop/erstgespraech">Kostenlose Beratung buchen</a>
+          <button type="button" class="ld-flow-link" data-flow="excellence">Wie läuft das ab?</button>
+        </div>
+        <div class="ld-feat">
+          <span class="ld-feat-label">Leistungen</span>
+          <span class="ld-feat-intro">Alles aus Fast Track, plus:</span>
+          <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Mehrseitig, voll individuell, kein Template</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Positionierung und Texte gemeinsam erarbeitet</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Eigene Seite je Leistung und je Region</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Karriereseite für Bewerbungen</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Einweisung, damit du selbst ändern kannst</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <p class="ld-plans-note">Beide Wege gibt es auf Wunsch auch mit monatlicher Zahlung.</p>
+  </div>
+</section>
+
+<!-- ================= ERGEBNISSE ================= -->
+<section id="ergebnisse">
+  <div class="ld-wrap">
+    <span class="ld-kicker">Kundenstimmen</span>
+    <h2>Was unsere Kunden selbst sagen.</h2>
+    <div class="ld-testis">
+      <figure class="ld-testi">
+        <div class="ld-video">
+          <button type="button" class="ld-video-poster" data-drive="1j0CfLYBFTxE8rld3skdFXz-vyE2dw1KL" data-title="Kundenfeedback Tina Fischl" style="background-image:linear-gradient(180deg,rgba(10,11,13,.15),rgba(10,11,13,.6)),url('https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@8b71625/webdesign/img-2ab632e361.jpg')">
+            <span class="ld-video-play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+            <span class="ld-video-label">Tina erzählt, was sich verändert hat</span>
+          </button>
+          <p class="ld-video-fallback">Video lädt nicht? <a href="https://drive.google.com/file/d/1j0CfLYBFTxE8rld3skdFXz-vyE2dw1KL/view" target="_blank" rel="noopener">Direkt öffnen</a></p>
+        </div>
+        <figcaption><b>Tina Fischl</b><span>Website und Anzeigen</span></figcaption>
+      </figure>
+      <figure class="ld-testi is-tall">
+        <div class="ld-video">
+          <button type="button" class="ld-video-poster" data-drive="13uZ_MVphy0c4aTdg1YtsnyuCOGqk19_T" data-title="Kundenfeedback Prime Fitness" style="background-image:linear-gradient(180deg,rgba(10,11,13,.15),rgba(10,11,13,.6)),url('https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@8b71625/webdesign/img-edf7331a26.jpg')">
+            <span class="ld-video-play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+            <span class="ld-video-label">Feedback ansehen</span>
+          </button>
+          <p class="ld-video-fallback">Video lädt nicht? <a href="https://drive.google.com/file/d/13uZ_MVphy0c4aTdg1YtsnyuCOGqk19_T/view" target="_blank" rel="noopener">Direkt öffnen</a></p>
+        </div>
+        <figcaption><b>Prime Fitness</b><span>Heinrich Meier · Website</span></figcaption>
+      </figure>
+    </div>
+    <div class="ld-cases">
+      <div class="ld-case">
+        <span class="ld-case-who">Tina Fischl</span>
+        <span class="ld-case-metric">Von unsichtbar<br>zu ausgebucht</span>
+        <p>Website neu strukturiert und klar auf ihr Angebot ausgerichtet. Aus Zufallsanfragen wurde planbare Auslastung.</p>
+      </div>
+      <div class="ld-case">
+        <span class="ld-case-who">MAR the beauty cabin</span>
+        <span class="ld-case-metric">Vertrauen vor<br>dem Erstkontakt</span>
+        <p>Aus einem veralteten Auftritt wurde eine Premium-Website mit klar sichtbaren Leistungen.</p>
+      </div>
+    </div>
+    <div class="ld-cta-row">
+      <a class="ld-btn" href="https://calendly.com/leaddrop/erstgespraech">Kostenlose Beratung buchen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <span>Was unsere Kunden erleben, kannst du auch haben.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJEKTE ================= -->
+<section id="projekte">
+  <div class="ld-wrap">
+    <span class="ld-kicker">Aktuelle Projekte</span>
+    <h2>14 Projekte, die live sind. Schau sie dir an.</h2>
+    <p style="margin-top:18px">Echte Seiten, keine Mockups. <span class="ld-hover-only">Fahr mit der Maus über ein Projekt, dann scrollt die Seite durch. </span>Ein Klick öffnet sie im neuen Tab.</p>
+    <div class="ld-projects is-feature">
+      <a class="ld-project" href="https://mega-vape.deals/" target="_blank" rel="noopener">
+        <span class="ld-shot"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@9cdc5d1/projekte/wolke7-l-v1.webp" alt="Startseite von Wolke 7 Dampfshop" loading="lazy" width="1200" height="2250"></span>
+        <span class="ld-project-top"><span class="ld-project-name">Wolke 7 Dampfshop</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <span class="ld-project-meta">Onlineshop · mega-vape.deals</span>
+      </a>
+      <a class="ld-project" href="https://www.ich-tina.com/" target="_blank" rel="noopener">
+        <span class="ld-shot"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@9cdc5d1/projekte/ichtina-l-v1.webp" alt="Startseite von Ich.tina Website" loading="lazy" width="1200" height="2250"></span>
+        <span class="ld-project-top"><span class="ld-project-name">Ich.tina Website</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <span class="ld-project-meta">Mehrseitige Website · ich-tina.com</span>
+      </a>
+      <a class="ld-project" href="https://shop.ich-tina.com/" target="_blank" rel="noopener">
+        <span class="ld-shot"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@9cdc5d1/projekte/ichtina-shop-l-v1.webp" alt="Startseite von Ich.tina Shop" loading="lazy" width="1200" height="2250"></span>
+        <span class="ld-project-top"><span class="ld-project-name">Ich.tina Shop</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <span class="ld-project-meta">Onlineshop · shop.ich-tina.com</span>
+      </a>
+      <a class="ld-project" href="https://prime-session.de/" target="_blank" rel="noopener">
+        <span class="ld-shot"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@9cdc5d1/projekte/prime-l-v1.webp" alt="Startseite von Prime Fitness" loading="lazy" width="1200" height="2250"></span>
+        <span class="ld-project-top"><span class="ld-project-name">Prime Fitness</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <span class="ld-project-meta">Website · prime-session.de</span>
+      </a>
+    </div>
+    <div class="ld-projects">
+      <a class="ld-project" href="https://achtsam-wohnen.com/" target="_blank" rel="noopener">
+        <span class="ld-shot"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@9cdc5d1/projekte/achtsam-s-v1.webp" alt="Startseite von Achtsam Wohnen" loading="lazy" width="640" height="1200"></span>
+        <span class="ld-project-top"><span class="ld-project-name">Achtsam Wohnen</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <span class="ld-project-meta">Mehrseitige Website · achtsam-wohnen.com</span>
+      </a>
+      <a class="ld-project" href="http://www.andorfer-bau.de/" target="_blank" rel="noopener">
+        <span class="ld-shot"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@9cdc5d1/projekte/andorfer-s-v1.webp" alt="Startseite von Andorfer Bau" loading="lazy" width="640" height="1200"></span>
+        <span class="ld-project-top"><span class="ld-project-name">Andorfer Bau</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <span class="ld-project-meta">Mehrseitige Website · andorfer-bau.de</span>
+      </a>
+      <a class="ld-project" href="https://www.gms-trucks.de/" target="_blank" rel="noopener">
+        <span class="ld-shot"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@9cdc5d1/projekte/gms-s-v1.webp" alt="Startseite von GMS Trucks" loading="lazy" width="640" height="1200"></span>
+        <span class="ld-project-top"><span class="ld-project-name">GMS Trucks</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <span class="ld-project-meta">Mehrseitige Website · gms-trucks.de</span>
+      </a>
+      <a class="ld-project" href="https://www.kfz-zieringer.de/" target="_blank" rel="noopener">
+        <span class="ld-shot"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@9cdc5d1/projekte/zieringer-s-v1.webp" alt="Startseite von KFZ Zieringer" loading="lazy" width="640" height="1200"></span>
+        <span class="ld-project-top"><span class="ld-project-name">KFZ Zieringer</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <span class="ld-project-meta">Mehrseitige Website · kfz-zieringer.de</span>
+      </a>
+      <a class="ld-project" href="https://seminarlounge.com/" target="_blank" rel="noopener">
+        <span class="ld-shot"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@9cdc5d1/projekte/seminarlounge-s-v1.webp" alt="Startseite von Seminarlounge" loading="lazy" width="640" height="1200"></span>
+        <span class="ld-project-top"><span class="ld-project-name">Seminarlounge</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <span class="ld-project-meta">Mehrseitige Website · seminarlounge.com</span>
+      </a>
+      <a class="ld-project" href="https://www.scima.com/" target="_blank" rel="noopener">
+        <span class="ld-shot"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@9cdc5d1/projekte/scima-s-v1.webp" alt="Startseite von SCIMA Prozesstechnik" loading="lazy" width="640" height="1200"></span>
+        <span class="ld-project-top"><span class="ld-project-name">SCIMA Prozesstechnik</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <span class="ld-project-meta">Mehrseitige Website · scima.com</span>
+      </a>
+      <a class="ld-project" href="https://stblerbs.de/" target="_blank" rel="noopener">
+        <span class="ld-shot"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@9cdc5d1/projekte/lerbs-s-v1.webp" alt="Startseite von Steuerberatung Lerbs" loading="lazy" width="640" height="1200"></span>
+        <span class="ld-project-top"><span class="ld-project-name">Steuerberatung Lerbs</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <span class="ld-project-meta">Mehrseitige Website · stblerbs.de</span>
+      </a>
+      <a class="ld-project" href="https://tanzschule-lang.com/" target="_blank" rel="noopener">
+        <span class="ld-shot"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@9cdc5d1/projekte/tanzschule-s-v1.webp" alt="Startseite von Tanzschule Lang" loading="lazy" width="640" height="1200"></span>
+        <span class="ld-project-top"><span class="ld-project-name">Tanzschule Lang</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <span class="ld-project-meta">Mehrseitige Website · tanzschule-lang.com</span>
+      </a>
+      <a class="ld-project" href="https://tina-fischl.de/" target="_blank" rel="noopener">
+        <span class="ld-shot"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@9cdc5d1/projekte/fischl-s-v1.webp" alt="Startseite von Tina Fischl" loading="lazy" width="640" height="1200"></span>
+        <span class="ld-project-top"><span class="ld-project-name">Tina Fischl</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <span class="ld-project-meta">Mehrseitige Website · tina-fischl.de</span>
+      </a>
+      <a class="ld-project" href="https://unikateausholz.com/" target="_blank" rel="noopener">
+        <span class="ld-shot"><img src="https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@9cdc5d1/projekte/unikate-s-v1.webp" alt="Startseite von Unikate aus Holz" loading="lazy" width="640" height="1200"></span>
+        <span class="ld-project-top"><span class="ld-project-name">Unikate aus Holz</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        <span class="ld-project-meta">Onepager · unikateausholz.com</span>
+      </a>
+    </div>
+    <div class="ld-cta-row">
+      <a class="ld-btn" href="https://calendly.com/leaddrop/erstgespraech">Kostenlose Beratung buchen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <span>Kostenlos, unverbindlich, mit Florentina.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REGIONEN ================= -->
+<section id="regionen">
+  <div class="ld-wrap ld-region-grid">
+    <div>
+      <span class="ld-kicker">Wo wir arbeiten</span>
+      <h2>Passau ist unser Standort. Nicht unsere Grenze.</h2>
+      <p style="margin-top:20px">Für jede Region, in der du Kunden suchst, bekommst du eine eigene Seite — damit du dort gefunden wirst, statt nur dort zu sitzen.</p>
+      <div class="ld-cta-row">
+        <a class="ld-btn" href="https://calendly.com/leaddrop/erstgespraech">Kostenlose Beratung buchen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <span>Auch für deine Region.</span>
+      </div>
+    </div>
+    <div class="ld-map"><svg class="ld-map-svg" viewBox="0 0 1000 910" role="img" aria-label="Karte von Bayern mit unseren Einsatzorten: Passau, Deggendorf, Straubing, Regensburg, Landshut, Ingolstadt, München, Augsburg, Nürnberg, Würzburg, Linz, Salzburg"><path class="ld-map-de" d="M205 282L206 285L203 288L205 290L205 292L203 292L202 293L204 295L202 297L202 300L203 302L208 304L210 302L209 297L213 297L215 294L217 303L221 302L221 298L227 294L228 296L233 300L234 305L232 308L232 310L233 314L237 314L239 322L237 322L234 325L235 330L231 332L237 337L239 334L238 331L240 329L246 327L243 333L248 333L247 335L248 338L246 342L248 345L246 348L249 351L261 351L263 347L267 345L268 342L264 340L268 338L272 337L273 339L270 341L271 345L277 345L274 348L277 355L274 356L273 359L279 361L280 363L282 367L281 369L284 371L281 373L277 373L275 374L278 381L275 380L274 384L277 387L281 386L281 389L280 389L279 394L282 397L279 401L277 399L279 398L276 402L279 403L277 405L278 411L280 411L278 415L288 421L289 426L291 423L294 424L298 428L299 431L296 432L294 436L292 435L290 438L297 440L297 442L295 443L299 445L297 452L300 450L302 453L304 451L305 453L308 455L310 453L313 454L312 457L314 458L313 460L316 460L317 463L321 464L322 466L321 468L323 467L325 473L328 475L326 475L328 478L328 480L324 482L328 485L327 489L328 494L324 496L324 498L327 499L327 503L325 507L323 506L325 507L324 511L321 513L324 516L322 517L326 520L326 523L329 521L330 526L332 531L334 532L327 537L321 538L320 536L323 536L322 533L323 531L325 532L326 531L320 530L318 532L318 536L312 540L310 531L308 531L307 533L300 528L299 529L300 532L297 534L299 535L297 537L300 540L299 541L303 544L308 550L303 551L303 554L306 557L306 562L304 563L304 568L306 569L303 571L296 570L296 573L293 572L295 576L285 581L286 582L285 584L278 585L276 581L274 580L271 583L267 585L263 585L264 587L262 590L264 591L261 594L260 598L253 603L253 605L255 607L256 605L258 606L258 610L259 611L265 622L268 626L267 631L269 632L267 634L268 639L271 642L271 649L274 660L276 663L278 664L279 668L278 670L279 680L277 683L278 687L276 689L275 696L272 697L270 700L271 703L274 706L274 708L274 712L273 712L274 718L269 721L270 724L274 722L271 726L274 725L274 726L273 727L278 733L274 735L275 737L271 736L268 740L270 743L275 746L275 756L277 759L276 762L277 766L272 768L270 766L271 769L269 770L269 775L268 773L269 770L267 769L266 764L262 766L261 763L257 764L252 771L234 765L231 766L231 770L227 772L227 775L219 782L218 780L213 783L211 782L208 782L206 781L205 782L203 782L203 786L201 785L199 788L197 786L192 787L188 784L185 775L182 772L177 772L169 768L160 769L154 766L144 759L141 755L140 749L127 743L116 733L113 732L111 735L117 741L133 752L134 758L138 763L140 768L134 768L134 770L131 769L131 771L122 763L123 762L122 759L105 750L108 754L100 751L97 753L106 758L107 762L97 769L90 771L88 770L86 765L84 764L84 761L87 761L87 759L83 759L83 757L79 757L77 754L77 751L71 756L77 761L75 763L75 765L65 761L66 756L63 752L64 749L67 748L65 745L63 744L59 746L58 740L54 736L52 738L53 744L50 745L48 740L48 737L42 736L41 734L40 738L42 740L28 742L26 744L23 750L23 754L16 759L18 763L16 765L22 770L25 769L26 774L27 771L29 773L35 772L35 768L40 766L42 768L46 766L50 772L46 774L48 772L47 771L45 773L46 780L43 784L40 783L41 780L39 777L33 775L31 779L24 782L26 786L29 785L30 787L21 790L15 788L12 791L4 789L-1 785L-1 780L-7 779L-11 781L-14 778L-20 784L-29 787L-31 791L-32 792L-35 790L-42 794L-52 792L-54 795L-59 794L-59 789L-62 785L-70 786L-73 785L-77 792L-88 795L-92 798L-96 798L-101 792L-94 790L-96 786L-95 785L-100 784L-103 788L-111 776L-117 770L-119 762L-115 755L-114 752L-117 741L-112 728L-112 719L-109 715L-109 708L-103 698L-105 691L-111 683L-109 663L-106 660L-106 656L-100 644L-96 640L-92 622L-84 615L-86 603L-86 600L-81 585L-81 579L-75 573L-75 555L-69 543L-61 538L-51 525L-50 517L-43 516L-41 510L-36 510L-32 507L-30 503L-24 485L-16 471L-9 468L-1 460L2 448L9 438L11 425L10 422L13 417L13 415L16 410L13 409L13 407L29 392L23 387L23 384L29 378L31 372L30 370L25 374L25 371L30 368L32 359L30 358L22 357L22 355L25 352L22 347L18 334L20 326L26 325L39 340L44 340L49 334L47 331L46 324L45 323L46 320L60 316L59 321L60 320L61 322L59 324L59 327L65 341L68 339L75 342L76 339L80 338L79 343L81 346L82 344L91 343L91 348L88 352L85 352L85 348L80 351L82 359L81 362L78 362L77 363L78 365L78 368L82 365L83 368L91 362L91 357L92 358L95 358L96 356L99 355L97 352L97 350L98 347L100 345L99 343L104 344L104 342L105 344L113 344L117 338L119 339L122 338L123 343L126 341L124 337L120 335L122 333L123 331L123 327L125 328L131 327L137 328L145 326L147 324L148 321L150 319L149 315L151 315L151 312L154 310L159 312L162 310L166 313L169 312L171 310L168 306L172 301L171 297L166 293L166 299L161 299L161 296L160 295L165 293L153 291L157 290L155 284L161 284L164 282L167 284L171 280L174 280L175 283L177 284L180 280L183 280L185 281L184 285L187 287L189 285L191 287L191 290L194 289L192 287L193 281L197 282L205 279L205 282ZM62 757L64 761L59 761L57 763L55 762L57 760L56 757L62 757ZM182 -146L186 -145L190 -147L192 -144L195 -144L201 -147L203 -144L202 -142L203 -140L210 -134L210 -131L206 -130L204 -127L199 -128L201 -123L199 -121L196 -120L198 -114L204 -109L201 -105L202 -99L204 -97L201 -95L195 -93L193 -91L191 -87L194 -86L193 -84L190 -84L191 -80L195 -80L198 -75L200 -76L207 -72L208 -74L217 -69L222 -72L223 -76L223 -79L218 -75L212 -85L217 -86L224 -91L227 -90L227 -94L230 -96L234 -93L233 -89L235 -87L238 -87L235 -93L236 -96L239 -96L240 -94L241 -97L244 -97L244 -94L248 -91L248 -87L246 -86L248 -80L250 -77L249 -71L254 -69L254 -67L259 -67L262 -64L266 -64L267 -62L265 -59L269 -57L268 -54L269 -52L272 -53L275 -50L279 -51L281 -48L284 -49L287 -47L288 -44L293 -43L289 -35L291 -33L289 -31L290 -27L287 -26L286 -30L286 -32L284 -35L281 -33L277 -34L276 -32L282 -27L285 -27L285 -25L284 -23L280 -20L282 -16L280 -13L287 -12L288 -10L291 -6L290 -4L288 -5L289 -3L288 0L284 -1L281 1L279 0L278 -2L275 -2L274 -1L270 -3L264 -3L262 -2L261 4L264 7L262 9L264 9L264 12L268 12L262 14L262 12L260 14L258 13L250 12L251 16L256 14L253 20L254 21L260 18L265 22L264 24L267 25L261 31L261 34L264 33L261 38L259 37L257 39L254 38L250 41L251 43L249 47L251 50L246 50L246 55L248 55L247 61L243 67L245 68L238 75L239 77L238 83L243 82L249 85L252 82L249 78L250 76L265 74L269 79L271 85L271 87L268 87L267 86L263 89L265 92L264 99L267 102L264 107L264 110L264 117L261 122L251 132L246 134L242 138L239 139L238 136L236 139L227 133L224 133L224 134L221 133L219 135L221 138L220 141L217 148L219 151L218 161L214 163L211 167L205 168L203 174L207 175L206 177L194 180L193 177L188 179L187 176L185 177L182 175L181 178L183 182L185 185L182 186L182 190L183 192L187 192L185 196L185 205L185 209L180 208L170 212L163 200L161 201L157 198L154 200L151 198L146 199L142 196L136 199L137 202L135 204L132 210L131 208L132 206L132 203L130 204L127 202L111 205L109 209L109 214L107 215L105 220L113 221L114 227L113 229L116 232L115 233L112 231L111 233L111 236L112 240L111 243L113 245L112 251L114 255L114 259L116 261L113 261L115 263L113 266L114 267L117 266L117 269L121 266L120 267L121 270L119 272L122 278L125 277L128 277L128 281L125 282L124 286L131 289L129 291L128 295L126 296L127 299L120 301L121 303L121 306L123 308L122 310L123 312L117 317L117 322L120 322L123 327L123 331L121 333L120 335L124 337L126 341L123 343L122 338L119 339L117 338L113 344L105 344L104 342L104 344L99 343L100 345L99 348L97 350L97 352L99 355L96 356L95 358L92 358L91 357L91 362L85 368L82 365L78 368L76 365L77 363L78 362L81 362L82 359L80 351L85 348L86 351L88 352L91 348L91 343L82 344L81 346L79 343L80 338L76 339L75 342L68 339L65 341L58 327L59 324L61 322L60 320L59 321L60 316L46 320L45 323L46 324L47 331L49 334L44 340L39 340L26 325L20 326L17 320L14 319L9 305L9 302L13 298L22 294L25 289L28 287L28 284L19 284L17 276L13 272L15 265L13 263L9 262L7 258L10 249L7 240L-4 227L-6 224L-17 223L-30 230L-38 231L-47 236L-62 237L-65 233L-65 229L-78 218L-78 215L-74 210L-68 211L-69 209L-68 207L-69 205L-65 201L-61 204L-58 203L-55 208L-55 200L-54 198L-61 191L-61 189L-57 185L-58 184L-51 183L-51 180L-45 178L-45 176L-42 178L-41 181L-38 181L-34 177L-36 175L-38 172L-38 169L-33 168L-31 169L-26 171L-26 168L-24 167L-25 162L-27 160L-26 155L-32 154L-31 149L-33 144L-36 143L-40 142L-39 138L-44 138L-45 136L-47 137L-48 135L-45 134L-44 132L-46 129L-41 127L-41 125L-46 119L-46 116L-44 115L-45 113L-44 109L-40 107L-38 103L-32 104L-28 107L-24 107L-25 105L-21 103L-22 101L-20 96L-19 92L-24 89L-21 88L-22 84L-26 80L-27 75L-24 69L-22 70L-18 61L-21 56L-21 54L-23 53L-25 48L-18 45L-17 40L-4 30L-4 27L-0 27L3 33L12 33L12 30L16 28L15 26L18 23L22 20L26 20L25 14L27 13L25 8L36 -2L39 -3L36 -9L33 -9L36 -13L33 -18L36 -22L47 -23L56 -21L61 -24L66 -25L63 -26L62 -30L71 -39L71 -45L73 -47L70 -50L67 -57L69 -60L67 -61L62 -63L52 -59L49 -56L46 -57L44 -62L41 -63L42 -66L45 -68L48 -74L50 -75L50 -77L56 -78L56 -80L60 -83L59 -85L61 -86L70 -86L74 -88L82 -90L87 -86L91 -90L100 -89L100 -94L102 -95L101 -99L97 -99L98 -102L96 -104L97 -106L93 -108L93 -111L105 -117L112 -120L115 -115L122 -115L123 -112L121 -106L123 -102L129 -104L130 -101L133 -102L135 -107L136 -108L141 -106L142 -113L147 -115L149 -118L154 -118L155 -123L156 -125L156 -128L158 -129L163 -137L158 -141L163 -142L172 -145L175 -150L180 -151L182 -151L181 -147L182 -146ZM-76 13L-68 17L-70 21L-71 27L-62 29L-58 35L-57 36L-49 36L-48 45L-50 46L-49 49L-49 52L-38 62L-37 69L-35 70L-32 67L-27 69L-25 72L-27 75L-27 78L-22 84L-21 88L-24 89L-20 91L-19 94L-22 101L-21 103L-25 105L-23 106L-32 106L-37 102L-40 107L-44 109L-45 113L-44 115L-46 116L-46 119L-41 125L-41 127L-46 129L-44 130L-45 134L-48 135L-47 137L-45 136L-44 138L-39 138L-39 142L-36 142L-33 144L-31 149L-32 154L-26 155L-27 160L-25 162L-24 167L-26 168L-26 171L-31 171L-33 168L-38 169L-39 172L-37 174L-34 177L-38 181L-41 181L-43 179L-45 176L-45 178L-51 180L-51 183L-58 184L-57 185L-61 189L-60 190L-54 198L-55 200L-54 207L-58 203L-61 204L-65 201L-69 205L-68 207L-69 209L-68 211L-74 210L-76 215L-78 218L-65 229L-65 233L-62 237L-47 236L-38 231L-30 230L-17 223L-6 224L7 240L10 249L7 258L9 262L13 263L15 265L13 272L17 276L19 284L28 284L28 287L25 289L22 294L13 298L9 302L9 305L14 319L17 320L20 326L18 334L22 347L25 352L22 355L22 357L30 358L32 359L30 368L25 371L25 374L30 370L31 372L29 378L23 384L23 387L29 392L27 394L23 396L21 401L14 405L13 409L16 408L13 415L13 417L10 422L11 425L9 438L2 448L-1 460L-9 468L-32 463L-38 458L-49 454L-55 448L-58 451L-63 450L-66 453L-76 446L-81 450L-86 451L-86 448L-92 448L-95 450L-101 448L-102 444L-106 442L-111 443L-116 439L-119 434L-123 430L-121 426L-123 422L-131 423L-129 419L-143 422L-145 417L-151 412L-150 408L-153 406L-150 402L-150 400L-148 402L-144 396L-145 395L-141 395L-138 393L-138 392L-139 388L-136 386L-139 387L-136 384L-136 382L-135 381L-137 377L-135 374L-141 376L-140 373L-143 373L-142 372L-147 372L-151 370L-152 369L-151 368L-152 363L-158 359L-157 358L-158 356L-152 354L-150 351L-151 348L-154 347L-153 343L-151 339L-150 340L-151 337L-154 335L-154 330L-156 328L-156 324L-161 329L-164 329L-164 326L-168 327L-170 324L-170 321L-174 320L-175 322L-179 322L-181 320L-183 322L-186 316L-192 312L-195 315L-196 314L-198 317L-197 313L-203 316L-204 314L-207 315L-206 318L-217 320L-221 326L-225 323L-235 332L-241 332L-243 337L-244 334L-249 335L-250 334L-250 336L-252 336L-256 339L-255 340L-261 340L-263 336L-269 339L-272 337L-273 339L-278 335L-280 337L-284 335L-291 335L-291 332L-293 329L-291 329L-291 323L-285 319L-282 311L-284 307L-279 301L-274 299L-272 296L-273 293L-270 294L-273 292L-272 288L-270 285L-270 280L-272 279L-268 275L-271 276L-277 271L-281 274L-287 272L-293 264L-297 265L-298 268L-301 268L-300 265L-302 262L-305 262L-306 259L-310 259L-313 255L-315 242L-318 241L-320 237L-321 240L-323 239L-322 241L-325 234L-329 232L-327 228L-330 227L-328 225L-330 223L-330 222L-332 219L-332 217L-331 214L-333 213L-332 209L-329 207L-331 202L-329 201L-326 199L-325 196L-328 195L-326 190L-325 191L-320 187L-323 176L-318 172L-307 169L-306 163L-304 162L-305 160L-303 157L-297 156L-294 158L-285 156L-289 149L-287 147L-289 148L-291 143L-286 142L-284 147L-281 146L-279 148L-279 152L-280 154L-275 153L-271 151L-270 150L-271 148L-268 146L-263 147L-257 143L-256 145L-253 146L-253 150L-251 153L-248 150L-248 148L-246 147L-241 154L-229 149L-226 150L-225 148L-228 146L-230 142L-228 136L-231 135L-231 132L-235 131L-231 129L-233 123L-235 124L-234 123L-227 119L-225 123L-217 128L-211 124L-211 121L-212 118L-210 116L-213 115L-212 113L-214 112L-211 109L-210 111L-207 109L-208 104L-204 102L-203 104L-200 104L-196 102L-188 93L-183 97L-180 96L-180 91L-174 93L-173 90L-170 91L-169 88L-167 83L-165 82L-164 88L-160 87L-158 88L-147 83L-145 84L-142 82L-142 78L-140 74L-141 71L-139 66L-130 68L-129 66L-124 66L-121 63L-117 63L-117 61L-113 59L-108 61L-106 60L-106 54L-97 54L-96 49L-93 51L-93 48L-94 44L-97 42L-94 42L-90 40L-85 34L-81 36L-83 35L-80 33L-83 31L-81 28L-82 25L-82 23L-85 19L-78 17L-76 13ZM505 -465L507 -461L513 -462L514 -455L523 -458L527 -455L529 -451L536 -451L538 -449L538 -445L535 -443L537 -439L541 -439L547 -435L551 -435L558 -431L562 -432L565 -435L574 -434L574 -431L578 -431L580 -435L580 -431L582 -429L580 -426L589 -428L590 -432L594 -427L597 -427L599 -418L600 -416L600 -413L598 -410L596 -411L596 -408L595 -405L593 -404L595 -400L593 -398L592 -394L594 -395L593 -393L595 -392L594 -390L595 -388L596 -386L598 -384L597 -381L598 -379L597 -374L593 -374L592 -372L588 -374L588 -363L585 -358L583 -351L587 -353L590 -352L587 -346L592 -344L596 -345L596 -348L597 -349L601 -349L601 -345L603 -342L607 -343L609 -343L609 -339L612 -340L611 -336L610 -333L607 -329L606 -327L603 -326L608 -323L606 -317L608 -315L605 -314L609 -309L601 -297L599 -288L606 -281L599 -278L599 -272L596 -273L595 -269L602 -259L603 -254L609 -251L610 -248L616 -241L621 -240L627 -234L630 -234L632 -238L635 -237L637 -232L643 -230L644 -226L656 -226L655 -227L660 -228L662 -232L664 -232L665 -231L669 -231L670 -229L680 -225L680 -222L681 -221L691 -222L691 -215L697 -215L699 -213L701 -214L702 -216L708 -215L707 -212L711 -212L710 -208L721 -207L721 -205L720 -203L719 -202L719 -201L727 -200L731 -201L732 -203L737 -201L737 -198L733 -198L733 -195L739 -185L738 -181L739 -179L737 -177L738 -175L739 -174L738 -171L741 -169L742 -165L740 -165L740 -163L738 -163L739 -159L718 -147L716 -153L715 -152L709 -153L710 -150L706 -150L707 -148L705 -147L704 -150L702 -148L698 -149L697 -151L698 -153L694 -151L693 -153L694 -155L688 -157L687 -154L682 -153L680 -149L672 -152L666 -152L663 -145L659 -142L657 -142L658 -144L652 -142L650 -144L650 -141L644 -138L639 -140L636 -137L636 -139L632 -138L629 -140L628 -139L628 -138L627 -134L615 -135L606 -129L600 -129L598 -131L597 -129L598 -127L592 -122L591 -120L592 -117L593 -115L592 -112L589 -111L588 -108L584 -107L586 -104L586 -100L590 -99L590 -97L589 -94L589 -90L588 -87L592 -83L590 -81L591 -76L585 -74L586 -70L585 -68L588 -66L587 -62L592 -58L592 -52L593 -50L591 -48L591 -46L589 -44L594 -42L594 -40L592 -38L592 -33L598 -32L599 -30L596 -29L596 -26L600 -23L605 -24L606 -22L602 -17L602 -13L600 -10L606 -10L607 -8L605 -2L599 4L598 8L599 10L596 13L594 10L595 8L593 9L590 4L587 7L583 8L576 4L571 6L564 6L565 5L564 2L562 0L557 0L559 -4L553 -8L548 -7L549 -10L548 -12L546 -11L543 -14L541 -12L538 -13L534 -12L528 -13L525 -10L523 -13L524 -14L516 -17L515 -23L510 -26L507 -26L503 -23L501 -27L497 -28L494 -25L492 -26L492 -24L487 -25L483 -24L481 -25L478 -34L482 -36L482 -38L481 -40L481 -44L477 -45L477 -48L475 -49L469 -47L468 -48L469 -50L465 -51L468 -57L470 -56L472 -55L476 -61L478 -64L479 -68L480 -66L482 -69L474 -75L473 -78L475 -79L470 -79L468 -84L469 -89L466 -89L465 -88L464 -90L462 -89L459 -90L459 -95L451 -94L447 -91L447 -94L444 -94L443 -95L439 -93L431 -93L421 -99L408 -96L411 -99L406 -98L404 -100L405 -105L403 -106L403 -109L405 -111L400 -115L401 -118L399 -119L400 -124L394 -128L394 -132L392 -134L393 -137L400 -137L400 -140L396 -141L398 -143L393 -141L388 -146L385 -146L383 -143L382 -148L376 -148L375 -150L372 -149L364 -148L359 -155L358 -160L360 -161L359 -164L356 -166L353 -171L353 -175L347 -177L345 -180L345 -192L347 -193L345 -194L353 -202L357 -208L355 -212L350 -214L351 -215L350 -217L352 -220L357 -221L355 -223L351 -222L352 -224L349 -225L347 -226L343 -233L344 -234L348 -235L353 -233L358 -238L356 -241L362 -243L388 -242L392 -245L405 -244L406 -250L401 -252L401 -255L407 -255L412 -258L413 -261L417 -261L418 -265L419 -266L419 -267L419 -269L412 -272L412 -276L415 -279L423 -283L421 -286L418 -286L417 -292L414 -293L411 -297L415 -299L416 -301L410 -307L407 -308L418 -311L420 -312L421 -317L419 -316L417 -319L415 -319L408 -325L403 -330L403 -333L399 -336L399 -340L401 -344L406 -346L411 -344L403 -352L399 -361L401 -363L400 -366L406 -369L406 -374L397 -370L394 -379L391 -381L391 -384L384 -393L385 -395L384 -397L378 -397L377 -401L378 -405L375 -407L373 -413L374 -418L373 -423L375 -423L374 -427L378 -427L379 -429L400 -427L404 -433L408 -435L408 -439L415 -441L424 -441L424 -437L427 -436L433 -439L443 -437L445 -435L446 -433L454 -434L455 -432L458 -432L468 -438L472 -438L475 -442L481 -446L486 -447L484 -450L488 -462L490 -462L495 -460L494 -461L495 -463L500 -468L506 -470L508 -468L505 -465ZM694 -155L693 -153L694 -151L698 -153L698 -151L702 -148L704 -150L705 -147L707 -148L706 -150L710 -150L709 -153L715 -154L716 -153L718 -147L722 -149L727 -140L729 -139L733 -142L736 -138L739 -136L736 -132L737 -129L743 -128L743 -124L746 -121L746 -119L746 -116L744 -114L743 -113L743 -109L745 -106L745 -104L741 -99L743 -98L743 -100L746 -99L745 -97L747 -92L756 -89L754 -92L758 -92L758 -95L765 -99L763 -102L766 -99L769 -101L772 -98L772 -100L774 -103L776 -105L779 -99L786 -98L785 -96L794 -93L794 -88L797 -85L798 -88L804 -89L806 -85L815 -86L816 -87L826 -84L830 -86L830 -83L833 -84L839 -86L841 -89L846 -89L853 -88L859 -92L862 -92L862 -87L866 -86L865 -90L866 -92L870 -92L868 -94L873 -97L872 -99L873 -101L876 -103L873 -110L871 -111L877 -109L880 -111L878 -114L881 -116L882 -121L888 -121L886 -122L887 -126L897 -125L903 -122L907 -122L914 -119L915 -115L917 -117L917 -120L923 -122L924 -124L927 -122L933 -124L933 -127L944 -126L947 -128L947 -130L950 -132L955 -130L956 -125L959 -128L964 -127L968 -133L967 -138L972 -134L969 -129L974 -127L974 -122L983 -120L992 -114L1002 -114L1004 -112L1009 -104L1011 -100L1009 -99L1009 -93L1010 -88L1012 -87L1012 -85L1010 -84L1010 -82L1015 -76L1016 -73L1019 -71L1020 -68L1021 -55L1018 -53L1017 -49L1016 -39L1014 -37L1015 -31L1013 -30L1013 -27L1011 -26L1011 -22L1012 -18L1008 -13L1008 -10L1006 -9L1007 -7L1005 -6L1005 2L1002 3L1003 6L1001 6L1001 9L1001 11L997 13L996 17L993 18L988 25L989 29L986 36L986 39L971 40L972 38L972 37L956 33L956 32L958 27L959 23L963 20L962 16L959 15L958 17L955 18L949 18L953 9L953 7L954 3L949 -1L944 -0L945 -3L940 -4L939 -8L940 -12L938 -11L938 -5L935 -4L934 -7L924 -2L919 -3L920 -6L917 -8L912 -6L910 -9L910 -12L906 -10L906 -4L903 -3L904 0L901 1L902 4L901 6L906 8L911 6L912 11L924 13L925 16L923 19L923 22L920 26L915 26L908 29L902 26L900 29L898 29L898 32L896 35L885 38L875 43L873 46L870 45L867 47L861 44L857 45L856 49L848 50L846 55L848 59L843 60L841 65L837 66L832 63L827 63L817 65L813 61L806 66L795 66L793 69L795 76L790 79L790 81L792 84L786 86L783 93L775 89L773 84L769 82L770 86L761 92L762 96L756 98L755 94L750 94L748 100L746 102L746 106L742 112L742 115L733 115L732 112L726 116L717 113L717 121L716 127L711 131L712 133L709 135L702 137L686 125L683 128L684 131L681 127L676 129L669 134L668 136L667 139L663 134L660 136L654 134L652 136L639 138L635 142L634 146L635 150L630 151L628 152L627 156L622 157L622 159L623 162L616 167L616 169L616 176L611 176L612 182L610 183L610 186L610 189L603 188L603 186L601 183L603 182L604 178L603 176L596 172L597 170L600 171L599 167L590 166L589 162L590 158L579 158L574 153L565 153L565 151L560 149L557 148L559 143L558 140L553 138L554 136L551 132L551 130L546 130L544 128L551 123L554 125L553 124L553 119L555 119L556 117L551 112L550 108L548 109L549 111L544 111L542 105L544 102L550 101L551 96L550 94L553 93L555 90L557 91L561 88L559 86L563 83L565 86L562 88L568 92L567 96L565 98L566 102L573 101L574 96L577 95L579 99L581 97L586 97L586 94L583 95L585 89L584 85L588 84L589 87L591 87L590 86L593 82L598 84L601 82L603 83L602 80L605 80L607 80L611 75L612 72L611 70L604 70L601 63L605 61L603 58L598 60L597 58L597 54L599 52L603 53L606 50L607 47L601 47L601 45L599 42L600 41L605 41L606 42L606 40L608 41L608 38L609 40L616 39L616 36L619 33L624 33L626 32L626 36L629 35L631 33L630 30L633 29L633 26L635 24L640 24L640 21L642 20L644 22L657 20L660 22L660 19L662 17L657 13L658 11L655 -0L650 3L647 -1L642 -1L645 -2L643 -4L644 -7L641 -7L640 -4L639 -15L633 -15L632 -20L631 -19L626 -19L624 -17L622 -20L619 -18L617 -19L616 -23L614 -24L606 -22L605 -24L600 -23L596 -26L596 -29L599 -30L598 -32L592 -33L592 -38L594 -40L594 -42L589 -42L591 -46L591 -48L593 -50L592 -52L592 -58L587 -62L588 -66L585 -68L586 -70L585 -74L591 -76L591 -81L592 -83L588 -87L588 -89L590 -90L589 -94L591 -98L590 -99L586 -100L586 -104L584 -107L588 -108L589 -111L592 -112L593 -115L591 -116L592 -120L594 -123L598 -127L597 -129L598 -131L600 -129L606 -129L615 -135L627 -134L627 -138L628 -139L629 -140L632 -138L636 -139L635 -137L639 -140L644 -138L650 -141L650 -144L652 -142L657 -145L657 -142L659 -142L663 -145L666 -152L672 -152L680 -149L682 -153L687 -154L688 -157L694 -155ZM375 -149L382 -148L383 -143L385 -146L388 -146L393 -141L398 -143L396 -141L400 -140L399 -136L393 -137L392 -134L394 -132L394 -128L402 -124L399 -119L401 -118L400 -115L405 -111L403 -109L404 -106L405 -105L404 -100L406 -98L411 -99L408 -96L421 -99L431 -93L439 -93L443 -95L444 -94L447 -94L447 -91L451 -92L459 -95L459 -90L462 -89L464 -90L465 -88L466 -89L469 -89L468 -84L470 -79L475 -79L473 -78L474 -75L482 -69L480 -66L479 -68L478 -64L475 -62L472 -55L470 -54L468 -57L465 -53L469 -50L468 -48L469 -47L475 -49L477 -48L477 -45L481 -44L481 -40L483 -38L482 -36L478 -33L480 -30L480 -26L483 -24L487 -24L492 -24L492 -26L494 -25L496 -28L501 -27L503 -25L507 -26L510 -26L515 -23L516 -17L523 -15L523 -13L525 -12L528 -13L534 -12L538 -13L541 -12L543 -14L546 -12L548 -12L549 -10L548 -7L553 -8L559 -4L557 0L562 0L564 2L565 5L564 6L571 6L576 4L583 7L585 7L587 8L590 4L593 9L595 8L594 10L595 13L599 10L599 8L599 4L602 3L607 -6L606 -10L600 -10L602 -13L602 -17L606 -20L614 -24L616 -23L617 -19L619 -18L622 -20L624 -17L626 -19L631 -19L632 -20L633 -15L639 -15L640 -5L641 -7L644 -7L643 -4L645 -2L642 -1L647 -1L650 3L655 -0L658 11L657 13L660 14L662 18L660 19L660 22L657 20L644 22L642 20L640 21L641 23L635 24L633 26L633 29L630 30L631 33L629 35L626 36L625 33L624 33L619 33L616 36L616 39L609 40L608 37L608 41L606 40L606 42L605 41L600 41L599 42L601 45L601 47L607 47L606 50L603 53L599 52L597 54L597 58L598 60L603 58L605 61L601 63L603 66L603 68L608 71L611 70L612 72L611 75L607 80L605 79L602 80L603 83L601 82L598 84L592 81L590 86L591 87L589 87L588 84L585 84L584 86L585 89L583 95L586 94L586 96L579 99L577 95L574 96L574 100L570 102L566 102L565 99L568 92L562 88L565 85L563 83L559 86L561 88L557 91L555 90L553 93L550 94L551 96L550 101L544 102L542 105L544 111L549 111L548 109L550 108L551 112L555 116L556 118L553 119L553 124L554 125L551 123L544 128L546 130L551 130L543 134L541 137L534 140L535 137L533 137L530 134L527 133L527 135L523 135L526 137L522 136L519 138L516 137L515 139L505 141L499 137L488 144L487 139L482 138L483 134L482 131L479 131L477 133L478 132L472 126L473 121L472 116L475 117L476 115L474 112L462 110L462 113L458 113L458 118L455 118L454 121L453 119L447 121L448 126L447 127L450 131L448 139L450 140L449 142L451 143L452 146L452 149L449 150L451 153L448 157L450 160L447 162L449 168L447 169L439 163L438 166L438 169L435 169L437 166L431 164L429 162L429 159L433 157L430 151L427 150L427 147L423 146L422 150L416 152L414 150L415 148L409 146L408 149L410 150L409 152L404 147L400 141L393 143L390 140L390 141L384 141L380 144L377 142L372 148L367 147L366 149L366 152L369 151L366 156L368 158L371 159L375 164L380 164L379 165L380 167L386 168L387 173L386 175L383 177L380 176L379 173L377 173L375 176L372 176L371 173L368 184L364 183L362 180L358 180L358 178L355 180L351 179L349 176L351 173L348 171L349 169L349 166L348 165L350 164L348 160L349 154L343 154L341 152L342 148L339 147L337 150L336 148L332 149L333 147L328 143L327 138L324 138L323 141L317 140L316 136L319 135L314 130L315 130L309 123L310 119L308 118L305 117L297 112L293 112L293 108L289 105L289 103L285 103L285 105L281 104L279 105L276 102L277 100L274 100L273 104L269 105L268 108L264 112L264 110L264 107L267 102L264 99L265 92L263 89L267 86L268 87L271 87L269 79L265 74L250 76L249 78L252 82L249 85L243 82L238 83L239 77L238 75L245 70L243 67L248 61L248 55L246 55L246 50L251 50L249 47L251 43L250 41L254 38L257 39L259 37L261 38L264 33L261 34L261 31L267 27L264 24L265 22L260 18L254 21L253 20L256 14L250 17L250 12L258 13L260 14L262 12L262 14L268 12L264 12L264 9L262 9L264 7L261 4L262 -2L264 -3L270 -3L274 -1L275 -2L278 -2L279 -1L280 1L288 -1L289 -3L288 -5L290 -4L291 -6L288 -10L280 -13L280 -16L280 -20L284 -23L283 -25L285 -27L282 -27L276 -32L277 -34L281 -33L284 -35L285 -32L286 -30L287 -26L290 -27L289 -31L291 -33L289 -35L293 -42L288 -44L287 -47L284 -49L281 -48L279 -51L275 -50L272 -51L269 -52L268 -54L269 -56L265 -59L267 -62L266 -64L262 -64L259 -67L254 -66L254 -69L249 -71L250 -77L247 -79L246 -86L252 -91L259 -93L260 -98L265 -98L266 -101L268 -100L269 -97L272 -101L275 -99L278 -101L279 -99L282 -99L279 -102L281 -103L285 -103L286 -107L286 -109L287 -111L289 -112L291 -108L294 -108L295 -111L303 -113L303 -117L309 -119L313 -124L314 -126L313 -128L316 -129L315 -135L325 -136L332 -132L337 -127L346 -129L349 -133L356 -127L359 -132L355 -134L354 -139L356 -139L355 -143L361 -145L360 -147L363 -148L375 -149Z"/><path class="ld-map-by" d="M278 104L279 105L281 104L285 105L284 104L289 103L289 105L293 108L292 111L297 112L305 117L308 117L310 119L309 123L314 130L319 133L316 136L317 140L323 141L324 140L327 138L328 143L333 147L332 149L336 148L337 150L339 147L342 148L341 152L343 154L349 154L348 160L350 164L348 165L349 166L348 169L348 171L351 173L349 175L350 178L355 180L358 178L358 180L362 180L367 184L369 183L369 173L372 176L379 173L380 176L383 177L387 173L386 168L380 167L379 165L380 164L375 164L366 156L369 153L366 152L367 147L372 148L377 142L380 144L384 141L390 141L390 140L393 143L400 141L404 147L409 152L410 150L408 149L409 146L415 148L414 150L416 152L422 150L423 146L426 146L427 150L431 150L433 155L429 159L429 162L431 164L437 166L435 169L438 169L438 166L439 163L447 169L449 168L447 162L450 160L448 157L449 153L449 150L452 149L452 146L451 143L449 142L450 140L448 139L450 131L447 127L448 126L447 121L453 119L454 121L455 118L458 118L458 113L462 113L461 111L474 112L476 115L475 117L472 116L473 121L472 126L478 132L477 133L479 131L482 131L483 134L482 138L487 139L488 144L499 137L505 141L515 139L516 137L519 138L522 136L526 137L523 135L528 133L533 137L535 137L534 139L541 137L543 134L551 132L554 136L553 138L558 140L559 143L557 148L560 148L565 151L565 153L574 153L576 157L580 158L580 164L577 167L574 172L576 172L578 174L578 176L585 178L585 180L591 185L592 192L590 197L591 205L600 209L602 213L599 216L608 217L610 221L613 221L616 226L627 229L626 232L632 231L633 234L635 234L636 237L634 240L632 240L633 244L644 247L644 252L639 257L639 262L637 263L637 268L634 267L632 268L633 273L632 273L632 279L623 284L622 287L624 292L628 298L633 300L636 302L641 302L641 307L639 311L641 313L640 315L642 316L646 317L645 319L649 325L648 329L650 336L651 337L658 339L658 349L656 350L660 354L661 361L668 363L668 365L676 369L676 373L679 377L679 380L689 381L693 384L693 379L705 381L711 385L712 388L714 390L717 390L718 399L721 399L721 402L727 405L726 409L729 411L730 416L733 416L737 421L739 421L740 425L739 428L745 433L749 435L757 433L764 439L767 444L769 445L770 447L773 449L774 458L774 464L776 465L773 465L776 465L776 467L782 469L783 472L785 472L787 475L789 474L789 468L801 468L803 473L808 472L807 475L811 485L813 485L814 488L822 488L823 487L826 490L828 498L832 500L833 502L835 507L834 511L839 514L836 516L835 522L833 524L831 525L836 529L836 539L835 541L837 544L836 551L834 554L835 555L834 558L830 560L828 563L827 561L826 562L824 570L821 572L812 567L810 564L802 559L798 561L791 554L788 554L787 556L788 558L786 561L784 560L781 562L780 560L778 561L778 564L780 566L779 570L781 572L776 585L778 592L774 604L755 621L750 623L740 623L734 626L726 627L715 631L707 641L692 645L690 651L688 652L682 657L680 662L676 660L676 663L675 664L675 671L691 687L694 700L699 701L700 705L703 705L712 726L707 737L703 741L704 743L702 748L701 748L699 753L702 756L705 756L706 757L710 758L714 754L719 756L722 761L724 763L724 767L728 775L722 782L724 787L719 787L720 792L718 798L720 803L720 808L716 811L714 815L709 809L709 812L699 807L695 801L690 800L689 795L685 795L682 793L679 788L682 782L686 780L677 773L676 770L679 769L679 766L676 769L672 765L663 764L660 767L656 765L652 765L648 776L641 775L637 777L631 771L627 765L627 760L616 764L611 762L600 766L598 763L602 754L599 751L596 757L592 760L587 761L593 778L594 781L592 783L589 783L583 783L574 782L571 780L566 780L565 782L563 779L558 781L549 781L540 784L539 788L530 787L527 787L510 787L506 784L504 789L501 792L499 795L500 801L497 804L489 805L487 806L483 805L478 805L477 803L475 804L468 813L472 815L473 819L461 818L458 821L454 823L453 830L451 832L443 832L448 824L446 822L432 824L426 830L406 831L404 828L406 827L397 815L398 812L388 812L389 806L397 803L394 802L391 798L386 798L375 803L371 798L362 796L362 793L353 792L348 790L346 793L345 797L343 798L332 796L326 793L330 786L323 787L323 790L326 793L324 801L323 807L324 809L328 810L329 822L324 826L322 832L323 835L321 834L317 835L316 840L311 845L310 850L307 852L301 854L299 856L297 856L293 860L288 858L283 860L283 855L287 854L289 850L287 847L293 836L292 831L289 834L285 831L282 837L275 836L272 840L270 832L270 830L268 827L272 825L273 822L271 817L268 817L265 814L264 809L257 810L256 805L252 801L253 795L251 798L246 799L243 796L240 796L238 800L229 795L231 792L230 790L231 787L228 784L223 784L222 786L219 790L219 793L218 797L214 795L211 797L210 793L206 793L199 790L199 787L201 785L203 786L203 782L205 782L206 781L208 782L211 780L213 783L218 779L218 782L221 781L227 775L227 772L231 770L232 767L234 765L252 771L257 764L261 763L262 766L266 764L267 769L269 770L268 773L269 775L269 770L271 769L270 766L272 768L277 766L276 762L279 759L275 756L275 746L270 744L268 740L271 737L275 737L274 735L278 733L273 727L274 726L274 725L272 727L274 722L270 724L269 721L274 718L273 712L274 712L274 708L274 706L271 703L270 700L272 697L275 696L276 689L278 687L277 683L279 680L278 670L279 668L278 664L276 663L274 660L272 649L271 642L270 638L267 634L269 632L267 631L268 626L265 622L259 611L258 610L258 606L256 605L255 607L253 605L253 603L260 598L261 594L264 591L262 590L264 587L263 585L267 585L272 584L274 580L276 581L278 585L285 584L286 582L285 581L295 576L293 572L296 573L296 570L303 571L306 569L304 568L304 563L307 562L306 557L303 554L303 551L308 550L303 544L299 541L300 540L297 537L299 535L297 534L300 532L299 529L300 528L307 533L308 531L310 531L312 540L318 536L318 532L320 530L326 531L325 532L323 531L322 533L323 536L320 536L321 538L327 537L334 532L332 531L332 526L328 522L326 523L326 520L322 519L324 516L321 513L325 512L325 507L323 506L325 507L327 504L327 499L324 498L324 496L328 494L327 489L328 485L324 484L328 480L328 478L326 475L328 475L325 473L323 467L321 468L321 466L317 463L316 460L313 460L314 458L312 457L313 454L310 453L308 455L305 453L304 451L302 453L300 450L297 452L299 445L295 443L296 442L297 440L290 438L292 435L294 436L296 432L299 431L298 428L294 426L291 423L289 426L288 421L278 415L280 413L278 411L278 405L279 403L276 402L277 398L279 401L282 397L279 394L280 389L281 389L281 386L277 387L274 384L275 380L278 381L275 374L277 373L281 373L284 371L281 369L282 367L279 364L279 361L273 359L274 356L277 355L274 348L277 345L271 345L270 341L273 339L272 337L268 336L264 340L268 342L267 345L263 347L261 351L255 350L251 352L246 348L248 345L246 342L248 338L247 336L248 335L243 332L246 327L240 329L238 331L239 334L237 337L231 334L235 330L234 325L239 321L237 314L233 314L232 308L234 305L234 302L229 296L228 294L221 298L221 302L218 303L216 299L215 294L213 297L209 297L210 302L206 304L202 300L202 297L204 296L202 293L203 292L205 292L204 291L203 288L206 285L205 282L205 279L197 282L193 281L192 287L194 289L191 290L191 287L189 285L187 287L184 285L185 281L183 280L180 280L177 284L175 283L174 280L171 280L167 284L164 282L161 284L155 284L157 290L153 291L165 293L160 295L163 299L166 299L166 293L168 293L171 297L172 301L168 306L171 310L169 312L166 313L162 310L159 312L154 310L153 312L151 315L149 315L150 319L148 321L147 324L144 325L142 327L137 328L130 327L125 328L123 327L120 322L117 322L117 317L123 312L122 310L123 308L121 306L121 303L120 301L127 299L126 296L128 295L129 291L131 289L124 286L125 282L128 281L127 278L125 277L122 278L119 272L121 270L120 267L122 266L117 269L117 266L114 267L113 266L115 265L113 261L116 261L114 259L114 255L112 251L113 245L111 243L113 240L111 236L112 233L112 231L115 233L116 232L113 229L114 227L113 221L106 221L105 218L109 214L109 209L111 205L127 202L130 204L132 203L132 206L131 208L132 210L135 204L137 202L136 199L142 196L146 199L151 198L154 200L157 198L161 201L163 200L170 212L180 208L185 209L185 205L183 196L187 192L183 192L182 190L182 186L185 185L182 182L181 178L182 175L185 177L187 176L188 179L193 177L194 180L206 177L207 175L203 174L205 168L211 167L214 163L216 163L219 159L219 151L217 150L218 147L220 138L219 135L221 133L224 134L224 133L227 133L231 137L236 139L238 136L240 139L250 132L251 133L263 119L264 112L268 108L269 105L273 104L274 100L277 100L276 102L278 104Z"/><text class="ld-map-country" x="871" y="749">Österreich</text><text class="ld-map-country" x="265" y="703">Bayern</text><g class="ld-pin is-home" style="--i:0" transform="translate(778 561)"><path d="M0 0c-7-9-11-14-11-19a11 11 0 0 1 22 0c0 5-4 10-11 19z"/><circle cx="0" cy="-19" r="4"/><text x="16" y="-26" text-anchor="start">Passau</text></g><g class="ld-pin" style="--i:1" transform="translate(706 498)"><path d="M0 0c-7-9-11-14-11-19a11 11 0 0 1 22 0c0 5-4 10-11 19z"/><circle cx="0" cy="-19" r="4"/><text x="14" y="-22" text-anchor="start">Deggendorf</text></g><g class="ld-pin" style="--i:2" transform="translate(647 488)"><path d="M0 0c-7-9-11-14-11-19a11 11 0 0 1 22 0c0 5-4 10-11 19z"/><circle cx="0" cy="-19" r="4"/><text x="0" y="30" text-anchor="middle">Straubing</text></g><g class="ld-pin" style="--i:3" transform="translate(576 458)"><path d="M0 0c-7-9-11-14-11-19a11 11 0 0 1 22 0c0 5-4 10-11 19z"/><circle cx="0" cy="-19" r="4"/><text x="-14" y="-18" text-anchor="end">Regensburg</text></g><g class="ld-pin" style="--i:4" transform="translate(584 568)"><path d="M0 0c-7-9-11-14-11-19a11 11 0 0 1 22 0c0 5-4 10-11 19z"/><circle cx="0" cy="-19" r="4"/><text x="14" y="4" text-anchor="start">Landshut</text></g><g class="ld-pin" style="--i:5" transform="translate(474 515)"><path d="M0 0c-7-9-11-14-11-19a11 11 0 0 1 22 0c0 5-4 10-11 19z"/><circle cx="0" cy="-19" r="4"/><text x="-14" y="-22" text-anchor="end">Ingolstadt</text></g><g class="ld-pin" style="--i:6" transform="translate(496 660)"><path d="M0 0c-7-9-11-14-11-19a11 11 0 0 1 22 0c0 5-4 10-11 19z"/><circle cx="0" cy="-19" r="4"/><text x="14" y="-8" text-anchor="start">München</text></g><g class="ld-pin" style="--i:7" transform="translate(394 606)"><path d="M0 0c-7-9-11-14-11-19a11 11 0 0 1 22 0c0 5-4 10-11 19z"/><circle cx="0" cy="-19" r="4"/><text x="-14" y="-8" text-anchor="end">Augsburg</text></g><g class="ld-pin" style="--i:8" transform="translate(421 357)"><path d="M0 0c-7-9-11-14-11-19a11 11 0 0 1 22 0c0 5-4 10-11 19z"/><circle cx="0" cy="-19" r="4"/><text x="14" y="-20" text-anchor="start">Nürnberg</text></g><g class="ld-pin" style="--i:9" transform="translate(251 279)"><path d="M0 0c-7-9-11-14-11-19a11 11 0 0 1 22 0c0 5-4 10-11 19z"/><circle cx="0" cy="-19" r="4"/><text x="14" y="-20" text-anchor="start">Würzburg</text></g><g class="ld-pin" style="--i:10" transform="translate(907 621)"><path d="M0 0c-7-9-11-14-11-19a11 11 0 0 1 22 0c0 5-4 10-11 19z"/><circle cx="0" cy="-19" r="4"/><text x="14" y="-8" text-anchor="start">Linz</text></g><g class="ld-pin" style="--i:11" transform="translate(720 735)"><path d="M0 0c-7-9-11-14-11-19a11 11 0 0 1 22 0c0 5-4 10-11 19z"/><circle cx="0" cy="-19" r="4"/><text x="14" y="-8" text-anchor="start">Salzburg</text></g></svg></div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="fragen">
+  <div class="ld-wrap">
+    <span class="ld-kicker">Bevor du fragst</span>
+    <h2>Die Einwände, die wir am häufigsten hören.</h2>
+    <div class="ld-faq">
+      <details>
+        <summary>Warum steht hier kein Preis?</summary>
+        <p>Weil jede Website anders ist und wir vorher wissen wollen, was du brauchst und ob es passt. Was du dafür bekommst: nach der kostenlosen Beratung eine konkrete Zahl, schriftlich, und die gilt dann auch. Auf Wunsch auch mit monatlicher Zahlung.</p>
+      </details>
+      <details>
+        <summary>Ich habe schon mal eine Agentur bezahlt. Es kam nichts dabei raus.</summary>
+        <p>Das hören wir oft, und meistens war die Seite nicht hässlich — sie hat nur nicht gesagt, was der Kunde davon hat, und niemand hat dafür gesorgt, dass sie überhaupt jemand sieht. Deshalb fangen wir bei der Positionierung an und nicht beim Design. Und deshalb gibst du die Texte frei, bevor irgendetwas gebaut wird.</p>
+      </details>
+      <details>
+        <summary>Wie viel Aufwand ist das für mich?</summary>
+        <p>Ein Termin für die Positionierung, eine Runde Feedback auf die Texte, eine Runde auf das Design. Bilder und Zugangsdaten brauchen wir von dir. Den Rest machen wir. Bei Fast Track ist es noch weniger: Da füllst du ein Formular aus.</p>
+      </details>
+      <details>
+        <summary>Bringt mir das wirklich Kunden aus meiner Region?</summary>
+        <p>Wenn in deiner Nähe Leute nach dem suchen, was du machst: ja. Wir bauen die Seite so, dass sie für deinen Ort und den Umkreis gefunden wird, in dem du tatsächlich arbeitest. Ob das bei dir aufgeht, sagen wir dir in der Beratung, auch wenn die Antwort nein lautet.</p>
+      </details>
+      <details>
+        <summary>Ich habe schon eine Website. Muss die weg?</summary>
+        <p>Nicht zwingend. Wenn die Substanz stimmt, arbeiten wir damit weiter. Das klären wir in der Beratung, bevor du etwas ausgibst.</p>
+      </details>
+      <details>
+        <summary>Was passiert in der kostenlosen Beratung?</summary>
+        <p>15 Minuten, per Telefon oder Video, mit Florentina. Ihr schaut euch deine Situation an, sie benennt die ein bis zwei Engpässe, die dich am meisten kosten, und sagt dir, ob Fast Track oder Excellence Track besser passt. Ob du danach mit uns arbeitest, ist deine Sache.</p>
+      </details>
+    </div>
+    <div class="ld-cta-row">
+      <a class="ld-btn" href="https://calendly.com/leaddrop/erstgespraech">Kostenlose Beratung buchen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <span>Deine Frage ist nicht dabei? Stell sie direkt im Gespräch.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SCHLUSS ================= -->
+<section class="ld-final">
+  <div class="ld-wrap">
+    <h2>15 Minuten. Danach weißt du, ob es passt.</h2>
+    <p class="ld-lead" style="max-width:48ch">Kein Verkaufsgespräch, keine Präsentation. Eine ehrliche Einschätzung, was deine Website bringen müsste — und was sie gerade bringt.</p>
+    <a class="ld-btn" href="https://calendly.com/leaddrop/erstgespraech">
+      Kostenlose Beratung buchen
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <div class="ld-contact">
+      <a href="mailto:info@leaddrop.de">info@leaddrop.de</a>
+      <a href="tel:+4915204206434">0152 04206434</a>
+      <span>Hochleiten 26, 94124 Büchlberg</span>
+      <span>Leaddrop · seit 2020</span>
+      <a href="https://leaddrop.de/impressum" target="_blank" rel="noopener">Impressum</a>
+      <a href="https://leaddrop.de/datenschutz" target="_blank" rel="noopener">Datenschutz</a>
+      <button type="button" class="ld-consent-open" onclick="var b=document.querySelector('.con-kit-component-cookie-banner-bulka');if(b)b.click();">Cookie-Einstellungen</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABLAUF-DIALOGE ================= -->
+
+<dialog class="ld-modal" id="flow-fasttrack" aria-labelledby="flow-fasttrack-title">
+  <div class="ld-modal-head">
+    <div>
+      <h3 id="flow-fasttrack-title">Fast Track — so läuft es ab</h3>
+      <p>Schnell, schlank, ohne Betreuungsschleife.</p>
+    </div>
+    <button type="button" class="ld-modal-close" data-close aria-label="Schließen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="ld-modal-body">
+    <ol>
+      <li><span><b>Kostenlose Beratung, 15 Minuten</b><span>Wir klären, ob Fast Track zu dir passt. Danach bekommst du deinen Festpreis, schriftlich.</span></span></li>
+      <li><span><b>Formular ausfüllen</b><span>Du beantwortest die Fragen zu deinem Angebot, deiner Region und deinen Bildern. Dauert etwa 20 Minuten.</span></span></li>
+      <li><span><b>Wir bauen</b><span>KI-gestützt, deshalb schnell. Du bekommst deine Seite zum Ansehen.</span></span></li>
+      <li><span><b>Eine Korrekturrunde</b><span>Du sagst, was noch anders soll. Wir setzen es um.</span></span></li>
+      <li><span><b>Live</b><span>Wir schalten scharf und schicken dir die Zugangsdaten.</span></span></li>
+    </ol>
+  </div>
+  <p class="ld-modal-foot">Ohne persönliche Betreuung. <b>Begleitung kannst du jederzeit dazubuchen</b>, und später auf Excellence Track umsteigen auch.</p>
+</dialog>
+
+<dialog class="ld-modal" id="flow-excellence" aria-labelledby="flow-excellence-title">
+  <div class="ld-modal-head">
+    <div>
+      <h3 id="flow-excellence-title">Excellence Track — so läuft es ab</h3>
+      <p>Mehrseitig, mit Florentina an deiner Seite.</p>
+    </div>
+    <button type="button" class="ld-modal-close" data-close aria-label="Schließen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="ld-modal-body">
+    <ol>
+      <li><span><b>Kostenlose Beratung, 15 Minuten</b><span>Kein Verkaufsgespräch. Wir schauen, wo es hängt, und ob wir zusammenpassen.</span></span></li>
+      <li><span><b>Festpreis, schriftlich</b><span>Du bekommst deine Zahl vor dem Start, nicht danach. Auf Wunsch auch mit monatlicher Zahlung.</span></span></li>
+      <li><span><b>Strategie-Workshop</b><span>Positionierung, Seitenstruktur und die Regionen, in denen du gefunden werden willst.</span></span></li>
+      <li><span><b>Texte für jede Seite</b><span>Leistungen, Referenzen, jede Region. Du gibst frei, bevor gebaut wird.</span></span></li>
+      <li><span><b>Design und Umsetzung</b><span>Individuell gebaut, mobil zuerst gedacht, auf Ladezeit geprüft. Korrekturschleifen eingeplant.</span></span></li>
+      <li><span><b>Live und Einweisung</b><span>Wir schalten scharf, zeigen dir alles und bleiben danach erreichbar.</span></span></li>
+    </ol>
+  </div>
+  <p class="ld-modal-foot">Vom ersten bis zum letzten Schritt <b>dieselbe Ansprechpartnerin</b>. Kein Ticketsystem, kein Weiterreichen.</p>
+</dialog>
+
+<script>
+(function(){
+  var root = document.getElementById('ld-page');
+  if(!root) return;
+
+  // Hintergrundvideo im Header. Datei: media/leaddrop-hero.mp4 (24 s, 960x540, 13 MB).
+  // Laedt erst nach dem Seitenaufbau und blendet ein; faellt lautlos weg, wenn die URL nicht erreichbar ist.
+  var LD_HERO_VIDEO = 'https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@main/leaddrop-hero.mp4';
+
+  (function(){
+    var v = root.querySelector('#ld-hero-video');
+    if(!v) return;
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    v.muted = true; v.defaultMuted = true; v.volume = 0;
+    v.src = LD_HERO_VIDEO;
+
+    // Erst einblenden, wenn wirklich Bilder laufen. Schlaegt Autoplay fehl,
+    // bleibt das Video unsichtbar statt als Standbild zu haengen.
+    v.addEventListener('playing', function(){ v.classList.add('is-playing'); v.parentNode.classList.add('is-video'); });
+
+    function attempt(){
+      var p = v.play();
+      if(p && p.catch) p.catch(function(){});
+    }
+    v.addEventListener('canplay', attempt);
+
+    // Manche Browser erlauben Autoplay erst nach der ersten Interaktion.
+    function onFirstTouch(){
+      if(v.paused) attempt();
+      window.removeEventListener('pointerdown', onFirstTouch);
+      window.removeEventListener('keydown', onFirstTouch);
+    }
+    window.addEventListener('pointerdown', onFirstTouch, { passive: true });
+    window.addEventListener('keydown', onFirstTouch);
+
+    v.addEventListener('error', function(){
+      v.classList.remove('is-playing');
+      v.removeAttribute('src');
+    });
+    v.load();
+  })();
+
+
+  // Ablauf-Dialoge
+  root.querySelectorAll('[data-flow]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var dlg = root.querySelector('#flow-' + btn.getAttribute('data-flow'));
+      if(dlg && typeof dlg.showModal === 'function') dlg.showModal();
+    });
+  });
+  root.querySelectorAll('.ld-modal').forEach(function(dlg){
+    dlg.querySelectorAll('[data-close]').forEach(function(b){
+      b.addEventListener('click', function(){ dlg.close(); });
+    });
+    dlg.addEventListener('click', function(e){ if(e.target === dlg) dlg.close(); });
+  });
+
+  // ---------- Agentur-Analyse: Scroll-Timeline ----------
+  (function(){
+    var list = root.querySelector('#ld-enemy');
+    if(!list || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var items = [].slice.call(list.querySelectorAll('.ld-enemy-item'));
+    var cur = root.querySelector('#ld-enemy-cur');
+    list.classList.add('is-js');
+    var ticking = false;
+    function update(){
+      ticking = false;
+      var vh = window.innerHeight, mid = vh * 0.5, r = list.getBoundingClientRect();
+      var p = Math.min(1, Math.max(0, (mid - r.top - 40) / (r.height - 80)));
+      list.style.setProperty('--p', p.toFixed(4));
+      var active = -1;
+      items.forEach(function(it, i){
+        var b = it.getBoundingClientRect();
+        if(b.top < vh * 0.9) it.classList.add('is-seen');
+        if(b.top < mid + 20) active = i;
+      });
+      items.forEach(function(it, i){ it.classList.toggle('is-active', i === active); });
+      if(cur) cur.textContent = ('0' + Math.max(1, active + 1)).slice(-2);
+    }
+    function onScroll(){ if(!ticking){ ticking = true; requestAnimationFrame(update); } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+  })();
+
+  // Karte: Pins fallen nacheinander ein
+  (function(){
+    var map = root.querySelector('.ld-map');
+    if(!map || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    map.classList.add('is-js');
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ map.classList.add('is-in'); io.disconnect(); } });
+    }, { threshold: 0.35 });
+    io.observe(map);
+  })();
+
+  // Glow-Buttons: Lichtpunkt folgt der Maus
+  root.addEventListener('pointermove', function(e){
+    var b = e.target.closest && e.target.closest('.ld-btn, .ld-nav-cta');
+    if(!b) return;
+    var r = b.getBoundingClientRect();
+    b.style.setProperty('--gx', (e.clientX - r.left) + 'px');
+    b.style.setProperty('--gy', (e.clientY - r.top) + 'px');
+  }, { passive: true });
+
+  // Cookie-Banner: Pixel erst nach Zustimmung
+  (function(){
+    var box = root.querySelector('#ld-consent');
+    if(!box) return;
+    function show(){ box.hidden = false; void box.offsetWidth; box.classList.add('is-in'); }
+    function hide(){ box.classList.remove('is-in'); setTimeout(function(){ box.hidden = true; }, 320); }
+    if(!window.ldConsent) show();
+    box.addEventListener('click', function(e){
+      var b = e.target.closest('[data-consent]');
+      if(!b) return;
+      var v = b.getAttribute('data-consent'), was = window.ldConsent;
+      try { localStorage.setItem('ld-consent', v); } catch(err) {}
+      window.ldConsent = v;
+      hide();
+      if(v === 'all') window.ldLoadPixel();
+      else if(was === 'all') window.location.reload();
+    });
+    root.querySelectorAll('.ld-consent-open').forEach(function(b){ b.addEventListener('click', show); });
+  })();
+
+  // Meta Pixel: Klick auf einen Beratungs-Link = Schedule
+  root.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href*="calendly.com"]');
+    if(!a || typeof window.fbq !== 'function') return;
+    window.fbq('track', 'Schedule');
+    if(e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0 || a.target === '_blank') return;
+    e.preventDefault();
+    setTimeout(function(){ window.location.href = a.href; }, 250);
+  });
+
+  // Video erst auf Klick laden
+  root.querySelectorAll('[data-drive]').forEach(function(trigger){
+    trigger.addEventListener('click', function(){
+      var frame = document.createElement('iframe');
+      frame.src = 'https://drive.google.com/file/d/' + trigger.getAttribute('data-drive') + '/preview';
+      frame.setAttribute('allow','autoplay; fullscreen');
+      frame.setAttribute('allowfullscreen','');
+      frame.setAttribute('title', trigger.getAttribute('data-title') || 'Video');
+      trigger.replaceWith(frame);
+    });
+  });
+})();
+</script>
+
+</div>
