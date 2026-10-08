@@ -261,7 +261,7 @@
 #ld-page .ld-video-play svg{width:22px;height:22px;color:var(--ld-accent-ink);}
 #ld-page .ld-video-label{font-size:1.02rem;font-weight:600;letter-spacing:-.01em;}
 #ld-page .ld-video-sub{font-size:.86rem;color:var(--ld-dim);}
-#ld-page .ld-video iframe{display:block;width:100%;aspect-ratio:16/9;border:0;}
+#ld-page .ld-video video{display:block;width:100%;aspect-ratio:16/9;background:#000;border:0;}
 #ld-page .ld-video-fallback{
   padding:13px 20px;border-top:1px solid var(--ld-line);font-size:.84rem;color:var(--ld-dim);
 }
@@ -429,7 +429,7 @@
 #ld-page .ld-testis{display:grid;grid-template-columns:3.1fr 1fr;gap:18px;margin-top:44px;align-items:start;}
 #ld-page .ld-testi .ld-video{margin-top:0;}
 #ld-page .ld-testi .ld-video-poster{background-position:center;background-size:cover;background-repeat:no-repeat;}
-#ld-page .ld-testi.is-tall .ld-video-poster,#ld-page .ld-testi.is-tall iframe{aspect-ratio:9/16;}
+#ld-page .ld-testi.is-tall .ld-video-poster,#ld-page .ld-testi.is-tall video{aspect-ratio:9/16;}
 #ld-page .ld-testi.is-tall .ld-video-label{font-size:.92rem;}
 #ld-page .ld-testi figcaption{display:flex;flex-direction:column;gap:2px;margin-top:14px;}
 #ld-page .ld-testi figcaption b{font-weight:600;color:var(--ld-text);}
@@ -691,14 +691,13 @@
     <span class="ld-kicker">In zwei Minuten</span>
     <h2>Schau, wer wir sind und was wir machen.</h2>
     <div class="ld-video">
-      <button type="button" class="ld-video-poster" id="ld-video-trigger" data-drive="1RCi6Yx0uWpMt-lw9HJUgmlh8RZl7qp4p" data-title="Leaddrop stellt sich vor">
+      <button type="button" class="ld-video-poster" id="ld-video-trigger" data-src="https://tobeder207.github.io/leaddrop-website-lp/media/leaddrop-film-v1.mp4" data-title="Leaddrop stellt sich vor">
         <span class="ld-video-play">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
         </span>
         <span class="ld-video-label">Lern uns in zwei Minuten kennen</span>
         <span class="ld-video-sub">Video abspielen</span>
       </button>
-      <p class="ld-video-fallback">Video lädt nicht? <a href="https://drive.google.com/file/d/1RCi6Yx0uWpMt-lw9HJUgmlh8RZl7qp4p/view" target="_blank" rel="noopener">Direkt öffnen</a></p>
     </div>
   </div>
 </section>
@@ -769,21 +768,19 @@
     <div class="ld-testis">
       <figure class="ld-testi">
         <div class="ld-video">
-          <button type="button" class="ld-video-poster" data-drive="1j0CfLYBFTxE8rld3skdFXz-vyE2dw1KL" data-title="Kundenfeedback Tina Fischl" style="background-image:linear-gradient(180deg,rgba(10,11,13,.15),rgba(10,11,13,.6)),url('https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@8b71625/webdesign/img-2ab632e361.jpg')">
+          <button type="button" class="ld-video-poster" data-src="https://tobeder207.github.io/leaddrop-website-lp/media/kunde-tina-v1.mp4" data-title="Kundenfeedback Tina Fischl" style="background-image:linear-gradient(180deg,rgba(10,11,13,.15),rgba(10,11,13,.6)),url('https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@8b71625/webdesign/img-2ab632e361.jpg')">
             <span class="ld-video-play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span>
             <span class="ld-video-label">Tina erzählt, was sich verändert hat</span>
           </button>
-          <p class="ld-video-fallback">Video lädt nicht? <a href="https://drive.google.com/file/d/1j0CfLYBFTxE8rld3skdFXz-vyE2dw1KL/view" target="_blank" rel="noopener">Direkt öffnen</a></p>
         </div>
         <figcaption><b>Tina Fischl</b><span>Website und Anzeigen</span></figcaption>
       </figure>
       <figure class="ld-testi is-tall">
         <div class="ld-video">
-          <button type="button" class="ld-video-poster" data-drive="13uZ_MVphy0c4aTdg1YtsnyuCOGqk19_T" data-title="Kundenfeedback Prime Fitness" style="background-image:linear-gradient(180deg,rgba(10,11,13,.15),rgba(10,11,13,.6)),url('https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@8b71625/webdesign/img-edf7331a26.jpg')">
+          <button type="button" class="ld-video-poster" data-src="https://tobeder207.github.io/leaddrop-website-lp/media/kunde-prime-v1.mp4" data-title="Kundenfeedback Prime Fitness" style="background-image:linear-gradient(180deg,rgba(10,11,13,.15),rgba(10,11,13,.6)),url('https://cdn.jsdelivr.net/gh/tobeder207/leaddrop-assets@8b71625/webdesign/img-edf7331a26.jpg')">
             <span class="ld-video-play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></span>
             <span class="ld-video-label">Feedback ansehen</span>
           </button>
-          <p class="ld-video-fallback">Video lädt nicht? <a href="https://drive.google.com/file/d/13uZ_MVphy0c4aTdg1YtsnyuCOGqk19_T/view" target="_blank" rel="noopener">Direkt öffnen</a></p>
         </div>
         <figcaption><b>Prime Fitness</b><span>Heinrich Meier · Website</span></figcaption>
       </figure>
@@ -1148,14 +1145,16 @@
   });
 
   // Video erst auf Klick laden
-  root.querySelectorAll('[data-drive]').forEach(function(trigger){
+  // Videos: nativer Player (saubere Steuerung + Vollbild auf dem Handy), lädt erst auf Klick
+  root.querySelectorAll('[data-src]').forEach(function(trigger){
     trigger.addEventListener('click', function(){
-      var frame = document.createElement('iframe');
-      frame.src = 'https://drive.google.com/file/d/' + trigger.getAttribute('data-drive') + '/preview';
-      frame.setAttribute('allow','autoplay; fullscreen');
-      frame.setAttribute('allowfullscreen','');
-      frame.setAttribute('title', trigger.getAttribute('data-title') || 'Video');
-      trigger.replaceWith(frame);
+      var v = document.createElement('video');
+      v.src = trigger.getAttribute('data-src');
+      v.controls = true; v.playsInline = true; v.preload = 'auto';
+      v.setAttribute('playsinline', ''); v.setAttribute('controlsList', 'nodownload');
+      v.setAttribute('title', trigger.getAttribute('data-title') || 'Video');
+      trigger.replaceWith(v);
+      var pr = v.play(); if(pr && pr.catch) pr.catch(function(){});
     });
   });
 })();
